@@ -16,5 +16,11 @@ int main() {
     char d = modulo;
     cout << "12345 % 256 = " << modulo << endl;
     cout << "Character with value " << modulo << " in ASCII table: " << d << endl;
+
+    unsigned int num = 112;
+    cout << num << endl;
+
+    // unsigned int negetiveNum = -112; // Wrong
+    // cout << num << endl;
 }
 

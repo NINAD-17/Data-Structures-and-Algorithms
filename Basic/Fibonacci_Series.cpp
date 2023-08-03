@@ -2,16 +2,17 @@
 using namespace std;
 
 int generateFibonacciNum(int num) {
-    int num1 = 0, num2 = 1, sum = 0;
+    int num1 = 0, num2 = 1, sum = 1;
     if(num == 1) return num1;
     else if(num == 2) return num2;
 
-    while((num) != 0) {
-        sum += (num1 + num2);
-        num1 = num2;
-        num2 = sum;
-        num--;
-    }
+    // while((num) != 0) {
+    //     sum += (num1 + num2);
+    //     num1 = num2;
+    //     num2 = sum;
+    //     num--;
+    // }
+
     return sum;
 }
  
@@ -34,7 +35,7 @@ int main() {
     cout << "Enter a number: ";
     cin >> num;
 
-    cout << "You want full fibonacci series(1) or only fibonacci number from that place(2)? [choose(1 or 2)] -> ";
+    cout << "Choose:\n1) Full fibonacci series\n2) Fibonacci number from that place\n Answer --> ";
     cin >> responseNum;
 
     if(responseNum != 1) {
@@ -42,7 +43,7 @@ int main() {
         return 0;
     }
 
-    cout << "You want 0 in Fibonnaci series? (Y/N): ";
+    cout << "Do you want 0 in Fibonnaci series? (Y/N): ";
     cin >> response;
 
     cout << "Fibonacci Series of 1st " << num << " numbers --> \n";

@@ -1,6 +1,7 @@
-const nameOfFile = "Subtract the Product and Sum of Digits of an Integer";
+const nameOfFile = "All divisors of a natural number";
 
-const separateWords = nameOfFile.split(" ");
+const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
+const separateWords = filteredNameOfFile.split(" ");
 const joinWords = separateWords.join("_");
 
 console.log(joinWords);

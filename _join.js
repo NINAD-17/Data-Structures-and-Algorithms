@@ -1,4 +1,4 @@
-const nameOfFile = "All divisors of a natural number";
+const nameOfFile = "Program to add two fractions";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

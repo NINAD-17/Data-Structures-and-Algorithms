@@ -41,3 +41,21 @@ int gcd(int a, int b) {
     return a;
 }
 ```
+
+
+## Armstrong Number
+An Armstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+Ex. `153` is an Armstrong number.
+    `1*1*1 + 5*5*5 + 3*3*3 = 153`
+
+
+## Perfect Number
+A number is a perfect number if is equal to sum of its proper divisors, that is, sum of its positive divisors excluding the number itself.
+
+Example:
+```
+Input: n = 6
+Output: true
+Divisors of 6 are 1, 2 and 3. Sum of 
+divisors is 6.
+```

@@ -1,23 +1,26 @@
 #include <iostream>
 using namespace std;
 
-int generateFibonacciNum(int num) {
-    int num1 = 0, num2 = 1, sum = 0;
+int generateFibonacciNum(int num, bool includeZero) {
+    int num1 = 0, num2 = 1;
+
+    if (!includeZero)
+        num1 = 1, num2 = 1;
+
     if(num == 1) return num1;
     else if(num == 2) return num2;
 
-    while((num) != 0) {
-        sum += (num1 + num2);
+    for(int i = 3; i <= num; i++) {
+        int sum = num1 + num2;
         num1 = num2;
         num2 = sum;
-        num--;
     }
-    return sum;
+    return num2;
 }
  
 void fibonacciSeriesGenerator(int num, int fNum, int sNum) {
     cout << fNum << " " << sNum << " ";
-    while(num != 0) {
+    while(num != 2) {
         cout << fNum + sNum << " ";
         int temp = fNum;
         fNum = sNum;
@@ -38,7 +41,11 @@ int main() {
     cin >> responseNum;
 
     if(responseNum != 1) {
-        cout << "Fibonacci Number at position " << num << " is -> " << generateFibonacciNum(num) << endl;
+        bool includeZero;
+        cout << "Can we include 0 while generating fib num from position " << num << "? [repond with 1 for Yes and 0 for No]: ";
+        cin >> includeZero;
+        
+        cout << "Fibonacci Number at position " << num << " is -> " << generateFibonacciNum(num, includeZero) << endl;
         return 0;
     }
 

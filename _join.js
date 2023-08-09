@@ -1,4 +1,4 @@
-const nameOfFile = "Program to add two fractions";
+const nameOfFile = "Replace all ‘0’ with ‘5’ in an input Integer";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

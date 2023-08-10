@@ -1,4 +1,4 @@
-const nameOfFile = "Replace all ‘0’ with ‘5’ in an input Integer";
+const nameOfFile = "Unique Number of Occurrences";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

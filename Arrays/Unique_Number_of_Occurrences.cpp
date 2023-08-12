@@ -1,7 +1,19 @@
 #include <iostream>
 #include <algorithm>
 #include <climits>
+#include <unordered_map>
 using namespace std;
+
+void findOccurrences_unMap(int *arr, int size) {
+    unordered_map<int, int> freq;
+    for(int i = 0; i < size; i++) {
+        freq[arr[i]]++;
+    }
+
+    for(auto it : freq) {
+        cout << it.first << " : " << it.second << endl;
+    }
+}
 
 // Optimized approach:
 // Time Complexity: This approach has a time complexity of O(n log n) due to the sorting step.

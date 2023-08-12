@@ -41,3 +41,18 @@ int arr[size]; // 💀⚠️
 - When an array is passed as a parameter to a function, it is not passed as a full copy of the array. Instead, the base address of the array is passed as a pointer, for example: `void updateArr(int *arr, int size)`.
 - This means that any changes made to the elements of the array within the function will modify the original array.
 - As a result, it is important to be cautious when modifying array elements within a function, as these changes will persist even after the function returns.
+
+
+## Problems
+
+- **Find Duplicates in an Array**:
+1. **XOR method**: 
+  - This method is only works if the array contains elements from 1 to n and there is exactly one duplicate element. If these conditions are not met, this approach will not work.
+  - Time Complexity is O(N) and Space complexity is O(1)
+  - **Explaination**:  The idea is to XOR all the elements in the array and then XOR the result with all numbers from 1 to n. Since XOR is both commutative and associative, the order in which we perform the XORs does not matter. Also, since a XOR a = 0 for any number a, all the elements in the array except for the duplicate element will cancel out. The final result will be the duplicate element.
+
+2. **Unordered Map**:
+  - The unordered_map::count() is a builtin method in C++ which is used to count the number of elements present in an unordered_map with a given key.
+  - Note: As unordered_map does not allow to store elements with duplicate keys, so the count() function basically checks if there exists an element in the unordered_map with a given key or not.
+  - This function returns 1 if there exists a value in the map with the given key, otherwise it returns 0.
+  - Refer this artical on <a href="https://www.geeksforgeeks.org/unordered_map-count-in-c/">GeekForGeeks -> Unordered_Map</a>

@@ -1,4 +1,4 @@
-const nameOfFile = "Unique Number of Occurrences";
+const nameOfFile = "Intersection of Two Arrays";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

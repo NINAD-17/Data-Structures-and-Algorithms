@@ -1,4 +1,4 @@
-const nameOfFile = "Intersection of Two Arrays";
+const nameOfFile = "Peak Index in a Mountain Array";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

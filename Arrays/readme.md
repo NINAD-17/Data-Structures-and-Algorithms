@@ -56,3 +56,10 @@ int arr[size]; // 💀⚠️
   - Note: As unordered_map does not allow to store elements with duplicate keys, so the count() function basically checks if there exists an element in the unordered_map with a given key or not.
   - This function returns 1 if there exists a value in the map with the given key, otherwise it returns 0.
   - Refer this artical on <a href="https://www.geeksforgeeks.org/unordered_map-count-in-c/">GeekForGeeks -> Unordered_Map</a>
+
+- **Binary Search**:
+Don't use **`(st + en) / 2`** to find middle element.
+Explaination:
+  - Maximum value of int is `2<sup>31</sup>-1`
+  - If `st = 2<sup>31</sup>-1` and `en = 2<sup>31</sup>-1`, then addition of `st` and `en` is not in range of `int`.
+  - Therefore, use **`st + (en - st) / 2`**

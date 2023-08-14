@@ -57,9 +57,21 @@ int arr[size]; // 💀⚠️
   - This function returns 1 if there exists a value in the map with the given key, otherwise it returns 0.
   - Refer this artical on <a href="https://www.geeksforgeeks.org/unordered_map-count-in-c/">GeekForGeeks -> Unordered_Map</a>
 
+
 - **Binary Search**:
 Don't use **`(st + en) / 2`** to find middle element.
 Explaination:
   - Maximum value of int is `2<sup>31</sup>-1`
   - If `st = 2<sup>31</sup>-1` and `en = 2<sup>31</sup>-1`, then addition of `st` and `en` is not in range of `int`.
   - Therefore, use **`st + (en - st) / 2`**
+
+1. **Peak Index in Mountain:** 
+  - `[7, 9, 1, 2, 3]` In this array `7, 9` are can be describe as `arr[i] < arr[i + 1]` means each element is smaller than next element & `1, 2, 3` can be describe as `arr[i] > arr[i + 1]` means each element is greater than next element.
+  - In this array peak element `arr[i - 1] < arr[i] > arr[i + 1] ` is `9` .
+
+
+2. **Find Pivot in an Array:**
+- **Rotated Sorted Array:** A rotated sorted array is an array that was originally sorted in ascending order, but has been rotated by some number of positions. For example, if we have a sorted array `[1, 2, 3, 4, 5]` and rotate it by two positions to the right, we get the rotated sorted array `[4, 5, 1, 2, 3]`.
+
+- **Pivot element:** In a rotated sorted array, the pivot element is the only element that is smaller than its previous element. It is the point at which the array was rotated. For example, if we have a sorted array `[1, 2, 3, 4, 5]` and rotate it by two positions to the right, we get the rotated sorted array `[4, 5, 1, 2, 3]`. In this case, the pivot element is `1`, as it is the only element that is smaller than its previous element `(5)`.
+

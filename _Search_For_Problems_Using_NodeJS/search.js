@@ -1,7 +1,14 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import inquirer from 'inquirer';
 
-function searchFilesInDirectory(dir, topic, keyword) {
+inquirer.prompt([
+    {
+        
+    }
+])
+
+const searchFilesInDirectory = (dir, topic, keyword) => {
     const files = getFilesInDirectory(dir, topic);
 
     files.forEach(file => {
@@ -13,7 +20,7 @@ function searchFilesInDirectory(dir, topic, keyword) {
     });
 }
 
-function getFilesInDirectory(dir, topic) {
+const getFilesInDirectory = (dir, topic) => {
     let files = [];
 
     fs.readdirSync(dir).forEach(file => {
@@ -31,4 +38,4 @@ function getFilesInDirectory(dir, topic) {
     return files;
 }
 
-searchFilesInDirectory("Arrays", "Array_Sum", "In");
+searchFilesInDirectory("Arrays", "Array_Sum", "Swap");

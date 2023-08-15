@@ -1,4 +1,4 @@
-const nameOfFile = "Peak Index in a Mountain Array";
+const nameOfFile = "Square Root of a number";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

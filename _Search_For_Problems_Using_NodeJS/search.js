@@ -4,9 +4,24 @@ import inquirer from 'inquirer';
 
 inquirer.prompt([
     {
-        
+        message: "Enter Directory Name: ",
+        name: "Directory"
+    },
+    {
+        message: "Enter topic of question: ",
+        name: "Topic"
+    },
+    {
+        message: "Enter any keyword related to specific question: ",
+        name: "Keyword"
     }
-])
+]).then((answers) => {
+    const dir = answers.Directory;
+    const topic = answers.Topic;
+    const keyword = answers.keyword;
+
+    searchFilesInDirectory(dir, topic, keyword);
+})
 
 const searchFilesInDirectory = (dir, topic, keyword) => {
     const files = getFilesInDirectory(dir, topic);
@@ -38,4 +53,4 @@ const getFilesInDirectory = (dir, topic) => {
     return files;
 }
 
-searchFilesInDirectory("Arrays", "Array_Sum", "Swap");
+// searchFilesInDirectory("Arrays", "Array_Sum", "Swap");

@@ -8,6 +8,12 @@
 - However, using this statement can lead to name collisions if you’re using multiple libraries.
 
 
+## return 0;
+- In C++, the `return 0;` statement at the end of the main function is optional. If you don’t explicitly return a value, the compiler automatically adds a `return 0;` statement. 
+- The return value of the main function is considered the "**Exit Status**" of the application. On most operating systems, returning 0 is a success status, indicating that the program worked fine. However, you can also return other values to indicate different exit statuses. 
+- For example, you can `return -1` or any other non-zero value to indicate that an error occurred during the execution of your program. So, while it’s not strictly necessary to include a `return 0;` statement at the end of your main function, it’s good practice to do so to explicitly indicate that your program executed successfully
+
+
 ## Data Types and Variables
 - **Int**: 4 bytes
 - **Char**: 1 byte

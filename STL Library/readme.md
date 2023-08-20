@@ -76,6 +76,20 @@ In C++, a container is a holder object that stores a collection of other objects
     - Map can store data in key value form.
     - All keys are unique and each key will point only one value.
 
-12. **Algorithm**
+12. **Unordered Map**
+    - If in any question order isn’t matter then use unordered only cause time complexity is O(1).
+
+13. **Algorithm**
     - `sort` function is based on intro sort. 
     - Intro sort is a combination of quick sort, heap sort and insertion sort.
+
+14. **Lower and Upper Bound**
+    - Array or Vector must be sorted to work in O(log(n)) complexity otherwise it'll work as O(n) complexity.
+    - `std::lower_bound` and `std::upper_bound` are two functions in the C++ Standard Template Library (STL) that can be used to perform binary searches on sorted ranges
+    - `std::lower_bound` returns an iterator pointing to the first element in the range `[first, last)` that is not less than (i.e. greater or equal to) the given value. If no such element is found, the function returns an iterator pointing to the end of the range.
+    - `std::upper_bound`, on the other hand, returns an iterator pointing to the first element in the range` [first, last)` that is greater than the given value. If no such element is found, the function also returns an iterator pointing to the end of the range.
+    - both functions return location/ iterator of that element.
+    - **Note:** 
+        For `set` and `map` don't use `suto it = upper_bound(s.begin(), s.end(), num);` because it's `O(n)` function for set and map.
+        Instead use it as `auto it = s.lower_bound(num);`
+        For `map` lower and upper bound only applies to key.

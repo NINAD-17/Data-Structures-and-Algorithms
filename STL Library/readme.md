@@ -93,3 +93,43 @@ In C++, a container is a holder object that stores a collection of other objects
         For `set` and `map` don't use `suto it = upper_bound(s.begin(), s.end(), num);` because it's `O(n)` function for set and map.
         Instead use it as `auto it = s.lower_bound(num);`
         For `map` lower and upper bound only applies to key.
+
+
+## Lambda Function
+```
+    // Lambda Function
+    // Ex. If you want to add 2 in an integer
+    // [](int x){return x + 2;} is the function
+    // (2) is for call
+    cout << "Lamda Function -> sum: " << [](int x, int y){return x + y;}(2, 3) << endl;
+
+    // To reuse this function, assign it to a variable
+    auto sumL = [](int x, int y){return x + y;};
+    cout << "Lamda Function -> sum function: " << sumL(2, 6) << endl;
+```
+
+
+15. **all_of**
+    - return true if all element satisfy a condition
+    ```
+    vector<int> v_l = {2, 3, 5};
+    cout << "All Of: " << all_of(v_l.begin(), v_l.end(), [](int x){return x > 0;}); // ans is true
+    ```
+
+    Or you can use,
+    ```
+    bool isPositive(int x) {
+        return x > 0;
+    }
+
+    int main() {
+        vector<int> v_l = {2, 3, 5};
+        cout << "All Of: " << all_of(v_l.begin(), v_l.end(), isPositive); 
+    }
+    ```
+
+16. **any_of**
+    - If any element satisfy a condition then o/p is true
+
+17. **none_of**
+    - If all elements not satisfied a condition then only o/p is true.

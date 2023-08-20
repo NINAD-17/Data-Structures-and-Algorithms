@@ -3,13 +3,13 @@
 ### Containers
 In C++, a container is a holder object that stores a collection of other objects (its elements). Containers are implemented as class templates, which allows great flexibility in the types supported as elements. The container manages the storage space for its elements and provides member functions to access them, either directly or through iterators (reference objects with similar properties to pointers).
 
-- 1. Sequence Container
+- 1. **Sequence Container**
     - Array, Vector, Deque, List ...
-- 2. Container Adaptors
+- 2. **Container Adaptors**
     - Stack, Queue, Priority Queue ...
-- 3. Associative Containers
+- 3. **Associative Containers**
     - Set, Map, Multimap ...
-- 4. Unordered Associative
+- 4. **Unordered Associative**
     - Unordered Set, Unordered Map, Unordered Multiset ...
 
 

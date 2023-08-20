@@ -42,5 +42,7 @@ int main() {
     }
     cout << endl;
 
+
+    cout << "Mini -> isEmpty?: " << mini.empty() << endl;
     return 0;
 }

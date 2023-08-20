@@ -54,3 +54,20 @@
 9. **Priority Queue** 
     -  It is a type of container adapter, specifically designed such that the **first element of the queue is either the greatest or the smallest** of all elements in the queue, depending on the ordering used
     - Priority queues are implemented using a heap data structure, and use an array or vector as an internal structure
+
+10. **Set**
+    - `set` is a type of associative container in which each element has to be unique because the value of the element identifies it.
+    - The values are stored in a specific sorted order i.e. either ascending or descending.
+    - By default, the std::set is sorted in ascending order. However, we have the option to change the sorting order by using the following syntax: `std::set <data_type, greater<data_type>> set_name;`
+    - `set` is slower than `unordered set`. In unordered set elements are not in sorted order.
+    - std::map and std::set use bidirectional iterators, which do not support the it+1 operation. Attempting to use it+1 with a bidirectional iterator will result in a compilation error.
+        Example:
+        ```
+        s.erase(s.begin() + 2); // It will not work
+
+        s.erase(next(s.begin(), 2)); // Instead use this method
+        ```
+    - `s.count(5)` this method checks that if 5 is present or not.
+    - `s.find(5)` if element is exist then it will return iterator of that element.
+
+11. **Map**

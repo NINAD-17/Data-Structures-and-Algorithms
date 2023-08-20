@@ -1,6 +1,8 @@
 # CPP STL Library
 
 ### Containers
+In C++, a container is a holder object that stores a collection of other objects (its elements). Containers are implemented as class templates, which allows great flexibility in the types supported as elements. The container manages the storage space for its elements and provides member functions to access them, either directly or through iterators (reference objects with similar properties to pointers).
+
 - 1. Sequence Container
     - Array, Vector, Deque, List ...
 - 2. Container Adaptors
@@ -71,3 +73,9 @@
     - `s.find(5)` if element is exist then it will return iterator of that element.
 
 11. **Map**
+    - Map can store data in key value form.
+    - All keys are unique and each key will point only one value.
+
+12. **Algorithm**
+    - `sort` function is based on intro sort. 
+    - Intro sort is a combination of quick sort, heap sort and insertion sort.

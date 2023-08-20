@@ -43,5 +43,18 @@ int main() {
     set<int> :: iterator itr = s.find(4);
     cout << "Iterator value of 5: " << *itr << endl;
 
+
+    // Set in decreasing order
+    set <int, greater<int>> s_dec;
+
+    s_dec.insert(1);
+    s_dec.insert(2);
+    s_dec.insert(3);
+    s_dec.insert(4);
+
+    for(auto value: s_dec)
+        cout << value << " ";
+    cout << endl;
+
     return 0;
 }

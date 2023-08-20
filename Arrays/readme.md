@@ -95,6 +95,7 @@ Explaination:
 ### 4. Book Allocation
 You've to allocate the book to m students such that **the maximum number of pages assigned to a student is minimum.**
 
-Example: 
-![Example: ](image.png)
+Example: <br>
+<img src="image.png" width=350px height=300px />
+<br>
 Here our answer is 60 because it's minimum.

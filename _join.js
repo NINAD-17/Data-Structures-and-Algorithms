@@ -1,4 +1,4 @@
-const nameOfFile = "Square Root of a number";
+const nameOfFile = "Merge Sorted Array";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

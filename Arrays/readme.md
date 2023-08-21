@@ -43,6 +43,12 @@ int arr[size]; // 💀⚠️
 - As a result, it is important to be cautious when modifying array elements within a function, as these changes will persist even after the function returns.
 
 
+## Inplace Algorithms:
+- The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.
+- In other words, an in-place algorithm operates directly on the input data structure without requiring extra space proportional to the input size. It modifies the input in place, without creating a separate copy of the data structure. This can be useful when working with large data sets, as it can help reduce memory usage and improve performance.
+- Examples: Sorting algorithms, Reversing an array ...
+
+
 ## **Find Duplicates in an Array**:
 1. **XOR method**: 
   - This method is only works if the array contains elements from 1 to n and there is exactly one duplicate element. If these conditions are not met, this approach will not work.
@@ -99,3 +105,13 @@ Example: <br>
 <img src="image.png" width=350px height=300px />
 <br>
 Here our answer is 60 because it's minimum.
+
+
+## Rotate an Array
+
+If you `%` any number with `n`, then your answer/output will always come in range of `0 .... (n - 1)`.
+Example: `num % 10` ---> answer will be in range of `(0 ... 9)`
+          43 % 10 = 3, 69 % 10 = 9
+        
+Shift ith term in cyclic way using following formula -
+**Formula:** - **`arr[(i + k) % n] = arr[i]`** ... where, i = index, k = rotate by num, n = size of array 

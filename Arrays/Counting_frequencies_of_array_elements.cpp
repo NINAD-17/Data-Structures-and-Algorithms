@@ -1,6 +1,41 @@
 #include <iostream>
 #include <climits>
+#include <algorithm>
+#include <unordered_map>
 using namespace std;
+
+// Using Binary Search: Time Complexity: O(n * log(n))
+void countFreq_binSrch(int *arr, int n) {
+    sort(arr, arr + n);
+
+    for(int i = 0; i < n; i++) {
+        int firstIndex = lower_bound(arr, arr + n, arr[i]) - arr;
+        int lastIndex = upper_bound(arr, arr + n, arr[i]) - arr - 1;
+        i = lastIndex;
+
+        int freq = (lastIndex - firstIndex) + 1;
+        cout << arr[i] << " ---> " << freq << endl;
+    }
+}
+
+// Using Unordered-map: Time & Space Complexity: O(n)
+void countFreq_uoMap(int *arr, int n) {
+    unordered_map<int, int> ans;
+
+    for(int i = 0; i < n; i++)
+        ans[arr[i]]++;
+    
+    // for(auto value: ans) 
+    //     cout << value.first << " ---> " << value.second << endl;
+
+    // To print it in sorted order
+    for(int i = 0; i < n; i++) {
+        if(ans[arr[i]] != INT_MIN) {
+            cout << arr[i] << " ---> " << ans[arr[i]] << endl;
+            ans[arr[i]] = INT_MIN;
+        }
+    }
+}
 
 // Using Array: Time Complexity: O(n^2)
 int countFreq(int *arr, int n, int ans[10][2]) {
@@ -29,11 +64,17 @@ int main() {
     int size = 8;
     int ans[10][2];
 
-    int sizeOfAns = countFreq(arr, size, ans);
+    cout << "Using Array - \n";
+    // int sizeOfAns = countFreq(arr, size, ans);
+    // for(int i = 0; i < sizeOfAns; i++) {
+    //     cout << ans[i][0] << " --> " << ans[i][1] << endl;
+    // }
 
-    for(int i = 0; i < sizeOfAns; i++) {
-        cout << ans[i][0] << " --> " << ans[i][1] << endl;
-    }
+    // cout << "Using Unordered Array - \n";
+    // countFreq_uoMap(arr, size); 
+
+    cout << "Using Binary Search - \n";
+    countFreq_binSrch(arr, size);
 
     return 0;
 }

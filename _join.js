@@ -1,4 +1,4 @@
-const nameOfFile = "Check if Array Is Sorted and Rotated";
+const nameOfFile = "Counting frequencies of array elements";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

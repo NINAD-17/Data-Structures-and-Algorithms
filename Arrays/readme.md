@@ -115,3 +115,14 @@ Example: `num % 10` ---> answer will be in range of `(0 ... 9)`
         
 Shift ith term in cyclic way using following formula -
 **Formula:** - **`arr[(i + k) % n] = arr[i]`** ... where, i = index, k = rotate by num, n = size of array 
+
+
+## Pascal Triangle
+
+In this solution, when you're accessing previous rows elements to take sum and add to current position. 
+
+```
+temp[j] = ans[i - 1][j - 1] + ans[i - 1][j];
+```
+Here, temp is a current row and `temp[j]` is current position. To add value in it we need to calculate sum of previous row's `j`th position and `j - 1`th position.
+`ans` is the main vector which stores a vector. So we're going to previous vector by `ans[i - 1]` and access particular position by `ans[i - 1][j]` jth element.

@@ -1,4 +1,4 @@
-const nameOfFile = "Counting frequencies of array elements";
+const nameOfFile = "Third Maximum Number";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

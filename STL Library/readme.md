@@ -82,6 +82,7 @@ In C++, a container is a holder object that stores a collection of other objects
 13. **Algorithm**
     - `sort` function is based on intro sort. 
     - Intro sort is a combination of quick sort, heap sort and insertion sort.
+    - To sort array in decreasing order -> `sort(arr, arr + n, greater<int>());`
 
 14. **Lower and Upper Bound**
     - Array or Vector must be sorted to work in O(log(n)) complexity otherwise it'll work as O(n) complexity.

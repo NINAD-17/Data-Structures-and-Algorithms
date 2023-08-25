@@ -84,6 +84,11 @@ In C++, a container is a holder object that stores a collection of other objects
     - Intro sort is a combination of quick sort, heap sort and insertion sort.
     - To sort array in decreasing order -> `sort(arr, arr + n, greater<int>());`
 
+    `max` VS `max_element`
+    - `std::max` is a function that returns the maximum value of two or more elements. It can be used with any type that supports comparison using the `<` operator or a custom comparison function. For example, you can use `std::max` to find the maximum value of two integers like this: `int max_value = std::max(3, 5);`
+    - `std::max_element` is a function that returns an iterator pointing to the maximum element in a range of elements. It is defined in the `<algorithm>` header and can be used with any container that supports forward iterators, such as arrays, vectors, lists, etc. The comparisons can be performed either using the `<` operator or a custom comparison function. For example, you can use `std::max_element` to find the maximum value in a vector of integers like this: `auto max_value = *std::max_element(v.begin(), v.end());`
+    - `std::max` is used to find the maximum value of two or more elements, while `std::max_element` is used to find the maximum element in a range of elements.
+
 14. **Lower and Upper Bound**
     - Array or Vector must be sorted to work in O(log(n)) complexity otherwise it'll work as O(n) complexity.
     - `std::lower_bound` and `std::upper_bound` are two functions in the C++ Standard Template Library (STL) that can be used to perform binary searches on sorted ranges

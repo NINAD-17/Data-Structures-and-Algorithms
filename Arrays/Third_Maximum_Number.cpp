@@ -4,6 +4,44 @@
 #include <algorithm>
 using namespace std;
 
+// Best Solution: In place algorithm
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+int thirdMax(int *arr, int n) {
+    if(n == 1) 
+        return arr[0]; // If size is 1 then return max num as arr[0]
+    
+    if(n == 2)
+        return max(arr[0], arr[1]); // If size is 2 then return max num from value of 0th index and 1th index.
+
+    int firstMax = *max_element(arr, arr + n); // finding max element from whole array
+    int secondMax = INT_MIN;
+    int thirdMax = INT_MIN;
+    int count = 0; // count -> to check if we found second max element or not if not then we will return firstMax. When it will happen? when all values are similar such as 3, 3, 3, 3
+    for(int i = 0; i < n; i++) {
+        if(secondMax < arr[i] && arr[i] != firstMax) {
+            secondMax = arr[i];
+            count++;
+        }
+    }
+
+    if(count == 0)
+        return firstMax; // As we've not found any second max we're returning firstMax
+    
+    count = 0; // Reset count to 0. to find thirdMax is exist or not
+    for(int i = 0; i < n; i++) {
+        if(thirdMax < arr[i] && (arr[i] != firstMax && arr[i] != secondMax)) {
+            thirdMax = arr[i];
+            count++;
+        }
+    }
+
+    if(count > 0)
+        return thirdMax;
+    else
+        return firstMax; // When there is no third max -> condition {1, 2, 2, 2}
+}
+
 // Using Set
 // Time/space complexity: O(n)
 int thirdMaxUsingSet(int *arr, int n) {
@@ -58,5 +96,7 @@ int main() {
 
     thirdDistinctMax(arr, n);
     cout << "Third Max using set: " << thirdMaxUsingSet(arr, n) << endl; 
+    cout << "Third Max using inplace algorithm is " << thirdMax(arr, n) << endl;
+
     return 0;
 }

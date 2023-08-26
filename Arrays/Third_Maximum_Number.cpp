@@ -30,7 +30,7 @@ int thirdMax(int *arr, int n) {
     
     count = 0; // Reset count to 0. to find thirdMax is exist or not
     for(int i = 0; i < n; i++) {
-        if(thirdMax < arr[i] && (arr[i] != firstMax && arr[i] != secondMax)) {
+        if ((thirdMax < arr[i] || arr[i] == INT_MIN) && (arr[i] != firstMax && arr[i] != secondMax)) {
             thirdMax = arr[i];
             count++;
         }

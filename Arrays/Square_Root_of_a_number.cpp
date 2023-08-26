@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+// Time complexity:
+// The function findSqrt uses a binary search algorithm to find the square root of the input number, 
+// which has a time complexity of O(log(n)). The function morePrecision uses a loop that runs p times, 
+// where p is the precision, and has a time complexity of O(p).
+// Therefore, the overall time complexity of this code is O(log(n) + p)
+
 // Get More precise sqrt
 double morePrecision(int num, int precision, int tempSoln) {
     double factor = 1;

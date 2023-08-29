@@ -23,3 +23,26 @@ Here, when we print name then it will only shows 'Taehyung' and not remaining 6 
 
 **Note:** `cin` stops execution, whenever you give 'space (_)', 'tab (\t)', 'new line(\n)'
 If you give input as "Kim Taehyung" then it will only print "Kim" and not next word "Taehyung". Because before reaching to character 'T' compiler gets Null character '\0'.
+
+
+## Converstion of character case (Lowercase, Uppercase)
+1. By using **`<ctype.h>`**:
+    This function takes a character as an argument and returns its uppercase equivalent if it is a lowercase letter `ch = toupper(ch);`
+    Same for uppercase to lower `ch = tolower(ch);`
+
+2. By **Bit Manipulation**:
+    You can flip the 32nd bit of the character’s ASCII value to change its case. only works for ASCII value.
+    ```
+    char c = 'a';
+    c &= ~' ';
+    cout << c << endl; // prints 'A'
+    ```
+
+3. By using **ASCII chars**:
+    This works because the ASCII values of the characters `'A' to 'Z'` are in the range `65` to `90`, while the ASCII values of the characters `'a' to 'z'` are in the range `97` to `122`. 
+    The difference between the ASCII values of an uppercase and a lowercase character is `32`. So, when you subtract `'A'` from an uppercase character, you get a value between `0` and `25`, representing its position in the alphabet. 
+    When you add `'a'` to this value, you get the ASCII value of the corresponding lowercase character.
+    ```
+    ch - 'A' + 'a' // For Uppercase to Lowercase
+    ch - 'a' + 'A' // For Lowercase to Uppercase
+    ```

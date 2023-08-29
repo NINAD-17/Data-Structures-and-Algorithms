@@ -1,4 +1,4 @@
-const nameOfFile = "Third Maximum Number";
+const nameOfFile = "Find Peak Element";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

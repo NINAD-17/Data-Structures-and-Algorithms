@@ -2,6 +2,8 @@
 using namespace std;
 
 int main() {
+
+    /***************** Character Arrays ********************/
     char name[10];
 
     // take input
@@ -13,6 +15,22 @@ int main() {
 
     // print output
     cout << "Your name is " << name << endl;
+
+
+
+    /************ String **************/
+    string s; 
+
+    cout << "Enter a string: ";
+    cin >> s;
+
+    cout << "Your string is " << s << endl;
+    cout << "Lenght of your string is " << s.length() << endl;
+
+
+
+    /*************** Difference between string and character array ******************/
+    string str = "HELLO";
 
     return 0;
 }

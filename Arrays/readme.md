@@ -44,6 +44,7 @@ int arr[size]; // 💀⚠️
 
 
 ## Inplace Algorithms:
+- Inplace means don't take extra space/memory
 - The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.
 - In other words, an in-place algorithm operates directly on the input data structure without requiring extra space proportional to the input size. It modifies the input in place, without creating a separate copy of the data structure. This can be useful when working with large data sets, as it can help reduce memory usage and improve performance.
 - Examples: Sorting algorithms, Reversing an array ...

@@ -46,3 +46,19 @@ If you give input as "Kim Taehyung" then it will only print "Kim" and not next w
     ch - 'A' + 'a' // For Uppercase to Lowercase
     ch - 'a' + 'A' // For Lowercase to Uppercase
     ```
+
+
+## String
+String is a class. It stores its data internally in the form of a null-terminated C-string, but normal usage does not allow you to access null terminator.
+<a href="https://stackoverflow.com/questions/40716515/do-stdstrings-end-in-0-when-initialized-with-a-string-literal">stackoverflow link -> </a>
+
+```
+string myString("Hello, World!");
+
+// Internal Buffer...
+// [ H | e | l | l | o | , |   | W | o | r | d | ! | \0 ]
+//                                                   ^ Null terminator.
+```
+In this example, the null terminator was NOT copied from the end of the string literal, but added internally by `std::string`.
+
+- `str.length()` to find length.

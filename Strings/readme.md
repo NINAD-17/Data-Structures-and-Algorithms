@@ -93,6 +93,14 @@ To take all sentence up to newline use `getline(cin, str)`;
   std::getline(std::cin, s); // Read an entire line (up to \n) from std::cin
 ```
 
+## cin.getline(str, len) VS getline(cin, str)
+- `cin.getline(str, len)` is a member function of the istream class, which cin is an instance of. It reads characters from the input stream and stores them in the character array pointed to by str, until either `(len - 1)` characters have been read or a newline character `('\n')` is encountered. The newline character is extracted from the input stream but not stored in the resulting string. The resulting string is always null-terminated.
+
+`getline(cin, str)` is a non-member function that reads characters from the input stream (cin) and stores them in a std::string object (str), until a delimiter character is encountered. The delimiter character is extracted from the input stream but not stored in the resulting string. By default, the delimiter character is a newline character ('\n'), but you can specify a different delimiter by passing it as the third argument to the getline function1. For example, to read a line of text until a comma (',') is encountered, you can use getline(cin, str, ',').
+
+- In general, you should prefer to use `getline(cin, str)` over `cin.getline(str, len)`when reading lines of text from the standard input stream into a `std::string` object, as it provides better memory safety and ease of use.
+
+
 ### Reverse Words in a sentence
 ```
 for(int i = 0; i < str.length(); i++) { 

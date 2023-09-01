@@ -1,9 +1,10 @@
 #include <iostream>
+#include <istream>
 #include <algorithm>
 using namespace std;
 
 int main() {
-    
+
     /***************** Character Arrays ********************/
     char name[10];
 
@@ -71,6 +72,13 @@ int main() {
     // Upper lower case
     transform(fname.begin(), fname.end(), fname.begin(), ::toupper); // from algorithm file
     cout << "Uppercase fname: " << fname << endl;
+
+
+    // getline(cin, str, '...') know more about delimeter char from readme.md file
+    cout << "------Getline--------" << endl;
+    string getStr;
+    getline(cin, getStr, ','); // It only reads input till ,
+    cout << getStr << endl;
 
     return 0;
 }

@@ -1,4 +1,4 @@
-const nameOfFile = "Find Peak Element";
+const nameOfFile = "Maximum Occuring Character";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

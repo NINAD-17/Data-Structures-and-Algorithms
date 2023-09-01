@@ -62,3 +62,52 @@ string myString("Hello, World!");
 In this example, the null terminator was NOT copied from the end of the string literal, but added internally by `std::string`.
 
 - `str.length()` to find length.
+
+
+## String VS Char Arrays
+- As String is a class so is provided with various built-in function substring(), charAt() etc. but for Char array no built in functions.
+
+
+**ERROR example 1:**
+```
+for(int i = 0; i < str.length(); i++) {
+    if(str[i] == " ") {
+        
+    }
+}
+```
+Here, `str[i] == " "` gives you an error because you are comparing a char (str[i]) with a string literal (" "). In C++, a string literal is enclosed in double quotes (" ") and represents an array of characters, while a character is enclosed in single quotes (' ') and represents a single character. therefore use `' '` instead of `" "`.
+
+
+## cin VS getline Cin
+
+If you input a string by cin,
+Ex. My name is xyz then it will only take My and not other words in that sentences.
+To take all sentence up to newline use `getline(cin, str)`;
+
+```
+  std::string s;
+  int i;
+  std::cin >> s; // Read a single word from std::cin
+  std::cin >> i; // Read a single number from std::cin
+  std::getline(std::cin, s); // Read an entire line (up to \n) from std::cin
+```
+
+### Reverse Words in a sentence
+```
+for(int i = 0; i < str.length(); i++) { 
+        if(str[i] == ' ' || str[i] == '\0') { 
+            temp = reverseString(temp);
+            ans += temp + " ";
+            temp = "";
+            continue;
+        }
+        temp += str[i];
+    }
+```
+
+Here, above code might work and give you correct output also but this code is not good according to cpp standards.
+When i is equal to str.length(), str[i] will access the character one position past the end of the string, which is a null character (\0). This will trigger the condition str[i] == '\0', causing the last word to be reversed and attached to the final output.
+However, it’s important to note that accessing a character past the end of a std::string object using the [] operator is undefined behavior according to the C++ standard. While it might work as expected on some implementations, it could also cause unexpected behavior or even crash your program on others.
+
+A safer way to reverse and attach the last word of the sentence would be to add an additional check after the for loop.

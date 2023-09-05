@@ -5,6 +5,28 @@
 using namespace std;
 
 // Time Complexity: O(n)
+// space complexity: O(1)
+void printAllDuplicatesEfficientSoln(string str) {
+    int alphabates[26] = {0};
+
+    for(int i = 0; i < str.length(); i++) {
+        alphabates[tolower(str[i]) - 'a']++;
+
+        if(alphabates[tolower(str[i]) - 'a'] >= 2)
+            str[i] = '$';
+    }
+    
+    for(int i = 0; i < str.length(); i++) {
+        if(str[i] == '$')
+            continue;
+
+        if(alphabates[tolower(str[i]) - 'a'] > 1) 
+            cout << str[i] << ", count = " << alphabates[str[i] - 'a'] << endl;
+    }
+}
+
+
+// Time Complexity: O(n)
 // The time complexity of inserting an element into an unordered_map is O(1) on average, and O(n) in the worst case when a collision occurs. Since the function inserts each character of the input string into the unordered_map, the total time complexity of this operation is O(n) on average, and O(n^2) in the worst case. However, hash collisions are rare, so we usually consider the time complexity to be O(n). The rest of the operations in the function, such as iterating over the elements of the unordered_map and printing the results, also take linear time
 
 // Space Complexity: O(n)
@@ -61,7 +83,7 @@ void printAllDuplicates(string str) {
 int main() {
     string str = "geeksforgeeks";
 
-    printAllDuplicatesUsingUOMap(str);
+    printAllDuplicatesEfficientSoln(str);
     cout << endl;
 
     return 0;

@@ -70,6 +70,58 @@ int main() {
     int numStr = 17;
     cout << to_string(numStr) + "1" << endl; // To convert int to string
 
+
+    // Assign
+    string a;
+    string base = "The quick brown fox jumps over a lazy dog.";
+
+    a.assign(base);
+    cout << a << endl; // The quick brown fox jumps over a lazy dog.
+
+    a.assign(base, 32, 40);
+    cout << a << endl; // lazy dog
+
+    a.assign("pangrams are cool", 7);
+    cout << a << endl; // panagram
+
+    a.assign(10, '*');
+    cout << a << endl; // "**********"
+
+    a.assign(base.begin() + 16, base.end() - 12);
+    cout << a << endl; // fox jumps over
+
+    a.assign(10, 0x2D);
+    cout << a << endl; // "----------"
+
+
+    // Erase
+    a = "This is an example sentence.";
+    a.erase(10, 8); // This is an sentence.
+
+    // replace
+    base = "this is a test string.";
+    string b1 = "n example";
+    string b2 = "sample phrase";
+    string b3 = "useful.";
+    str = base;
+
+    str.replace(9, 5, b1);
+    cout << str << endl; // this is an example string.
+
+    str.replace(19, 6, b2, 7, 6);
+    cout << str << endl;
+
+    str.replace(8, 6, "a shorty", 7);
+    cout << str << endl;
+
+
+    // Swap
+    string buyer = "Money";
+    string seller = "Goods";
+    cout << "Before the swap, buyer has " << buyer << " and seller has " << seller << endl;
+    buyer.swap(seller);
+    cout << "After the swap, buyer has " << buyer << " and seller has " << seller << endl;
+
     // Upper lower case
     transform(fname.begin(), fname.end(), fname.begin(), ::toupper); // from algorithm file
     cout << "Uppercase fname: " << fname << endl;
@@ -78,6 +130,7 @@ int main() {
     // getline(cin, str, '...') know more about delimeter char from readme.md file
     cout << "------Getline--------" << endl;
     string getStr;
+    cout << "Enter any string and when you want to end enter ',': ";
     getline(cin, getStr, ','); // It only reads input till ,
     cout << getStr << endl;
 

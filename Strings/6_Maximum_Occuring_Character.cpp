@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Problem: https://practice.geeksforgeeks.org/problems/maximum-occuring-character-1587115620/1
+
 char maxOccChar(string str) {
     int alphabates[26] = {0};
     int charNum = 0;

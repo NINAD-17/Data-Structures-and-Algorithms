@@ -3,6 +3,9 @@ using namespace std;
 
 // LeetCode: https://leetcode.com/problems/permutation-in-string/ (Medium)
 
+
+// Time Complexity: O(m + n)
+// Space Complexity: O(1)
 bool checkEqual(int a[26], int b[26]) {
     for(int i = 0; i < 26; i++) {
         if(a[i] != b[i])

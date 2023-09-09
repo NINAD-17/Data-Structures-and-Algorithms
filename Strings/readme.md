@@ -3,9 +3,9 @@
 - But to store many characters we need character array.
 - String is 1 dimentional character array. Ex. `|a|b|c|d|e|f|`.
 
-In `int arr[10];` arr will store address of 1st element of that array. And by that base address we can traverse entire array.
+In `int arr[10];` 'arr' will store address of 1st element of that array. And by that base address we can traverse entire array.
 Similary for char,
-`char ch[10];` to make character array. ch will store address of 1st element of character array. And by that base address we can traverse entire char array.
+`char ch[10];` to make character array. 'ch' will store address of 1st element of character array. And by that base address we can traverse entire char array.
 
 To take input for character array,
 ```

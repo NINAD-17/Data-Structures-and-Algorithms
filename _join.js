@@ -1,4 +1,4 @@
-const nameOfFile = "Maximum Occuring Character";
+const nameOfFile = "Count Binary Substrings";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

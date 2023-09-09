@@ -10,12 +10,12 @@ void replaceSpaces2(string &str) {
             spaceCount++;
     }
 
-    int newLength = str.length() + spaceCount * 2;
+    int newLength = str.length() + spaceCount * 2; // SpaceCount = 2 and not 3 because, EX. 2 spaces * 2 = 4, now add those 2 spaces -> 4 + 2 = 6
     str.resize(newLength);
 
-    for(int i = strSize - 1; i >= 0; i--) {
+    for(int i = strSize - 1; i >= 0; i--) { // strSize is original size of String
         if(str[i] == ' ') {
-            str[newLength - 1] = '0';
+            str[newLength - 1] = '0'; // Start to copy elements from last place of new length of string
             str[newLength - 2] = '4';
             str[newLength - 3] = '@';
             newLength -= 3;

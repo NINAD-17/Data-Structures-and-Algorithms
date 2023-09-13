@@ -9,7 +9,7 @@ Ex. 3 * 3 Matrix then you can make array of size 9.
 
 ```
 | 0 | 1 | 2 |
-| **3** | 4 | 5 |
+| 3 | 4 | 5 |
 | 6 | 7 | 8 |
 ```
 
@@ -25,17 +25,19 @@ Above solution is already implemented and to use this we use 2D Arrays.
   | 0 | 1 | 2 |
 
 - Creation of 2D Array `int arr[3][3];`
+- ```
   | 0 | 1 | 2 |
   | 3 | 4 | 5 | == But in memory it's stored as ==> | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
   | 6 | 7 | 8 |
+  ```
 
 
 ## How to take input and give output?
-use `cin >> arr[row_index][col_index];` for taking input.
-use `cout << arr[row_index][col_index];` for output.
+- use `cin >> arr[row_index][col_index];` for taking input.
+- use `cout << arr[row_index][col_index];` for output.
 
 
 ## Passing 2D array as a argument and accessing it as a parameters
-In parameters, we must need to put value of column in `int arr[][col];` otherwise it will give an error.
-Read More -> <a href="https://stackoverflow.com/questions/12813494/why-do-we-need-to-specify-the-column-size-when-passing-a-2d-array-as-a-parameter">Why do we need to specify the column size when passing a 2D array as a parameter?</a>
+- In parameters, we must need to put value of column in `int arr[][col];` otherwise it will give an error. <br>
+**Read More ->** <a href="https://stackoverflow.com/questions/12813494/why-do-we-need-to-specify-the-column-size-when-passing-a-2d-array-as-a-parameter">Why do we need to specify the column size when passing a 2D array as a parameter?</a>
 

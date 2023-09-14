@@ -5,7 +5,7 @@ But if you want 1000 * 1000 Matrix then it will be difficult to make big numbers
 To solve this problem you can use linear Array. 
 
 Ex. 3 * 3 Matrix then you can make array of size 9.
-![Visualization](image.png)
+![Visualization](images/image.png)
 
 ```
 | 0 | 1 | 2 |
@@ -68,9 +68,10 @@ Above solution is already implemented and to use this we use 2D Arrays.
   
   ## Problems:
   1. **Spiral Print:**
-  ```
+```
 | 0 | 1 | 2 |
 | 3 | 4 | 5 |
 | 6 | 7 | 8 |
-  ```
-  ![Spiral Print](image-1.png)
+```
+
+![Spiral Print](images/image-1.png)

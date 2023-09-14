@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+// Problem: https://leetcode.com/problems/spiral-matrix/
+
+// Time Complexity: O(N * M)
 vector<int> spiralMatrix(vector<vector<int>>& arr) {
     int rows = arr.size();
     int cols = arr[0].size();

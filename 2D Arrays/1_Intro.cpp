@@ -51,10 +51,9 @@ int main() {
     print2D_ArrUsingPtrAndSizes((int *)arr2, 3, 4);
 
     // Using Vector
-    vector<vector<int>> arr(3, vector<int>(3)) ;
-
+    // vector<vector<int>> arr3(3, vector<int>(3));
+    
     int arr[10][10];
-
     // Take Input
     for(int row = 0; row < 3; row++) {
         for(int col = 0; col < 3; col++) {
@@ -73,6 +72,22 @@ int main() {
         }
         cout << endl;
     }
+
+    // Using vector but without using `(3, vector<int>(3));`
+    vector<vector<int>> v;
+    int rows, cols;
+    cout << "Enter rows and cols: ";
+    cin >> rows >> cols;
+
+    v.resize(rows);
+    for(int i = 0; i < rows; i++)
+        v[i].resize(cols);
+
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < cols; j++) 
+            v[i][j] = i * j;
+    }
+    print2D_ArrUsingVector(v);
 
     // Search an element
     int target;

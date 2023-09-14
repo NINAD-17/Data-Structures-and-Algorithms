@@ -64,3 +64,13 @@ Above solution is already implemented and to use this we use 2D Arrays.
     
     **Note:** When you declare a vector without specifying its size, it’s initially empty, which means it has no elements and its size is 0. If you try to access an element in an empty vector using the `[]` operator, you’re trying to access memory that hasn’t been allocated, which leads to undefined behavior.
     If you want to do it with same way `vector<vector<int>> arr;` then you've to use `resize()` function. See Example on `1_Intro.cpp` file.
+
+  
+  ## Problems:
+  1. **Spiral Print:**
+  ```
+| 0 | 1 | 2 |
+| 3 | 4 | 5 |
+| 6 | 7 | 8 |
+  ```
+  ![Spiral Print](image-1.png)

@@ -75,3 +75,12 @@ Above solution is already implemented and to use this we use 2D Arrays.
 ```
 
 ![Spiral Print](images/image-1.png)
+
+ 2. **Transpose of Matrix:**
+-  Transpose of a matrix is obtained by interchanging all rows to columns and columns to rows.
+```
+| 1 | 2 | 3 |                     | 1 | 4 | 7 |
+| 4 | 5 | 6 |  ==> Transpose ==>  | 2 | 5 | 8 |
+| 7 | 8 | 9 |                     | 3 | 6 | 9 |
+```
+

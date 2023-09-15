@@ -1,4 +1,4 @@
-const nameOfFile = "Count Binary Substrings";
+const nameOfFile = "Rotate a Matrix by 90 degrees";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

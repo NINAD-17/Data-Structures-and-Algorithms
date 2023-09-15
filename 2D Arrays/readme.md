@@ -83,4 +83,4 @@ Above solution is already implemented and to use this we use 2D Arrays.
 | 4 | 5 | 6 |  ==> Transpose ==>  | 2 | 5 | 8 |
 | 7 | 8 | 9 |                     | 3 | 6 | 9 |
 ```
-
+- Transpose of matrix is **only possible for square matrix.** (Number of rows = Number of cols)

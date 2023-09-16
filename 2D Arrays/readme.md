@@ -66,8 +66,8 @@ Above solution is already implemented and to use this we use 2D Arrays.
     If you want to do it with same way `vector<vector<int>> arr;` then you've to use `resize()` function. See Example on `1_Intro.cpp` file.
 
   
-  ## Problems:
-  1. **Spiral Print:**
+## Problems:
+1. **Spiral Print:**
 ```
 | 0 | 1 | 2 |
 | 3 | 4 | 5 |
@@ -76,7 +76,7 @@ Above solution is already implemented and to use this we use 2D Arrays.
 
 ![Spiral Print](images/image-1.png)
 
- 2. **Transpose of Matrix:**
+2. **Transpose of Matrix:**
 -  Transpose of a matrix is obtained by interchanging all rows to columns and columns to rows.
 ```
 | 1 | 2 | 3 |                     | 1 | 4 | 7 |
@@ -84,3 +84,6 @@ Above solution is already implemented and to use this we use 2D Arrays.
 | 7 | 8 | 9 |                     | 3 | 6 | 9 |
 ```
 - Transpose of matrix is **only possible for square matrix.** (Number of rows = Number of cols)
+
+3. **Matrix Multiplication:**
+- Note: To perform multiplication of two matrices, we should make sure that the **number of columns in the 1st matrix is equal to the rows in the 2nd matrix.**

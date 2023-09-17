@@ -2,24 +2,26 @@
 #include <vector>
 using namespace std;
 
-// Link: https://leetcode.com/problems/search-a-2d-matrix/description/
+// Link: https://leetcode.com/problems/search-a-2d-matrix-ii/
 
 bool searchIn2DMatrix(vector<vector<int>>& matrix, int target) {
     int rows = matrix.size();
     int cols = matrix[0].size();
-    int st = 0, en = ((rows * cols) - 1);
 
-    while(st < en) {
-        int element = st + (en - st) / 2;
-        int element = matrix[element/cols][element%rows];
+    int rowIndex = 0;
+    int colIndex = cols - 1;
+
+    while(rowIndex < rows && colIndex >= 0) {
+        int element = matrix[rowIndex][colIndex];
+
         if(element == target)
             return true;
-        else if(element < target) 
-            st = element + 1;
+        else if(element < target)
+            rowIndex++;
         else 
-            en = element - 1;
+                colIndex--;
     }
-    
+
     return false;
 }
 

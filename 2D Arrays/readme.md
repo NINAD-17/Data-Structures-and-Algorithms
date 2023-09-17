@@ -87,3 +87,25 @@ Above solution is already implemented and to use this we use 2D Arrays.
 
 3. **Matrix Multiplication:**
 - Note: To perform multiplication of two matrices, we should make sure that the **number of columns in the 1st matrix is equal to the rows in the 2nd matrix.**
+
+- if you have two matrices A and B:
+```
+A = [a b] [c d]
+
+B = [e f] [g h]
+```
+The resulting matrix C would be:
+`C = [ae+bg af+bh] [ce+dg cf+dh]`
+
+4. **Search in 2D Matrix:**
+```
+| 1 | 2 | 3 |  Index--  0   1   2   3   4   5   6   7   8
+| 4 | 5 | 6 |   ==>   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| 7 | 8 | 9 | 
+```
+- You've to take `st = 0` and `en = (rows * cols) - 1`. Then take `mid = st + (en - st) / 2;`. And then apply binary search algorithm.
+- But if you get `arr[mid] = 6`, means index - `mid = 5` then you've to map it with `row` and `col`.
+- For that you can do it by, 
+ - For col, `index % cols` - Ex. 5%3 = 1
+ - For row, `index / cols` - Ex. 5/3 = 2
+So `Matrix[2][1] = 6`, and index in linear array is `5`.

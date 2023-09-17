@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+// Time complexity: O(n^3)
+// Space complexity: O(n^2)
+
 vector<vector<int>> matrixMultiplication(vector<vector<int>>& matrix1, vector<vector<int>>& matrix2) {
     vector<vector<int>> ans;
     ans.resize(matrix1.size());

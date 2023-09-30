@@ -2,6 +2,27 @@
 #include <vector>
 using namespace std;
 
+// Optimized isPrime()
+// Time complexity: O(sqrt(n))
+bool isPrime_2(int num) {
+    int count = 0;
+
+    for(int i = 1; i * i <= num; i++) { // i <= sqrt(num) If you use this then time complexity is O(sqrt(n) * log(n)) Because in every iteration this sqrt function will call and it takes O(log n) time.
+        if((num % i) == 0) {
+            count++;
+
+            if((num / i) != i)
+                count++;
+        }
+    }
+
+    if(count == 2)
+        return true;
+    else    
+        return false;
+}
+
+// Unoptimized -> Time complexity: O(n)
 bool isPrime(int num) {
     for(int i = 2; i < num; i++) {
         if(num % i == 0)
@@ -10,34 +31,15 @@ bool isPrime(int num) {
     return true;
 }
 
-// Using Sieve of Eratosthenes
-// time complexity: O(n log log n). This is because the Sieve of Eratosthenes algorithm runs in this time complexity. The outer loop runs n times and the inner loop runs approximately n / i times, where i is the current prime number. The sum of n / i for all i from 2 to n is approximately n log log n.
-// Space complexity: O(n)
-int countPrimesUsingSOE(int num) {
-    int count = 0;
-    vector<bool> prime(num + 1, true);
-
-    prime[0] = prime[1] = false; // As 0 and 1 are none prime number
-
-    for(int i = 2; i < num; i++) {
-        if(isPrime(i)) {
-            count++;
-
-            for(int j = 2*i; j < num; j = j + i) 
-                prime[j] = false;
-        }
-    }
-
-    return count;
-}
-
 // Brute Force Approach
-// Time complexity: O(n^2) because we're calculating isPrime function for each number between 2 and num
+// Time complexity:
+// if we used isPrime(i) ==> O(n^2) because we're calculating isPrime function for each number between 2 and num
+// if we used isPrime_2(i) ==> O(n * (sqrt(n)))
 int countPrimes(int num) {
     int count = 0;
     
     for(int i = 2; i < num; i++) {
-        if(isPrime(i))
+        if(isPrime_2(i))
             count++;
     }
 
@@ -48,7 +50,7 @@ int main() {
     int num;
     cin >> num;
 
-    int totalPrimeNumbers = countPrimesUsingSOE(num);
+    int totalPrimeNumbers = countPrimes(num);
     cout << "Number of prime numbers which are strictly less than " << num << " is " << totalPrimeNumbers << endl;
 
     return 0;

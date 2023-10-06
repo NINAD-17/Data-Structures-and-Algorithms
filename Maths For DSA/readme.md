@@ -45,11 +45,10 @@ But if you define `int` array globally then it's max limit is `10^7` and for `bo
 So, while both algorithms are used for finding prime numbers, the Segmented Sieve is more efficient when dealing with large numbers due to its lower space complexity.
 
 
-
-
-
 ## Euclid's Algortithm
 1. **GCD/ HCF:**
 - It's a one factor which is maximum and can divide both the numbers perfectly and give remainder 0.
 Example:
 <img src="/Maths For DSA/image.png" width=300 alt="GCD/HCF" />
+
+- Formula: `gcd(a, b) = gcd(a - b, b) => gcd(a % b, b)`

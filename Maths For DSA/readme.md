@@ -53,3 +53,25 @@ Example:
 
 - Formula: `gcd(a, b) = gcd(a - b, b) => gcd(a % b, b)`
 - Learn more about Euclid's Algorithm at: <a href="https://www.codingninjas.com/studio/library/gcd-euclidean-algorithm">codingninjas.com</a>
+
+2. Efficient Approach: **Binary GCD algorithm or Stein’s algorithm**.
+- Initialize a variable shift to count the number of common factors of 2 in `num1` and `num2`
+- `((num1 | num2) & 1) == 0` This is a bitwise operation that checks if both numbers are even. Here’s how it works:
+    - The `|` operator performs a bitwise `OR` operation. If either of the bits is `1`, the result is `1`. Otherwise, it’s `0`.
+    - The `&` operator performs a bitwise `AND` operation. If both bits are `1`, the result is `1`. Otherwise, it’s `0`.
+    - In binary, the least significant bit (LSB) of an even number is always `0`. So, `(num1 | num2) & 1` checks the LSB of the result of the bitwise `OR` operation between `num1` and `num2`. If the result is `0`, it means both numbers are even.
+- If `num1` is even, divide it by 2 until it becomes odd. Same for `num2` in do-while loop
+- Finally, we return the GCD by shifting left num1 by shift bits (i.e., multiplying it by 4).
+
+- **Why we don't use normal operators and used bitwise operators?**
+    - The reason we use bitwise operators in the Binary GCD algorithm is because bitwise operations are generally faster than arithmetic operations. Here’s why:
+
+    - Division and modulus operations (/ and %): These operations are relatively slow because they involve multiple steps of subtraction and shifting.
+
+    - Bitwise operations (>>, <<, &, |): These operations are very fast because they directly manipulate the bits of the numbers, and each operation can be done in a single step.
+
+    - In your code, you’re using division by 2 (num1 /= 2; num2 /= 2;) and modulus by 2 (num1 % 2 == 0) to check if a number is even and to halve it. These can be replaced with right shift (num1 >>= 1; num2 >>= 1;) and bitwise AND with 1 (num1 & 1 == 0), respectively, to make the code faster.
+
+    - Also, in your return statement, you’re multiplying num1 by 4 (return num1 * 4;). This can be replaced with left shift by 2 (return num1 << shift;) to multiply num1 by the number of common factors of 2 in the original numbers.
+
+    - So, while your code is correct, using bitwise operators can make it more efficient.

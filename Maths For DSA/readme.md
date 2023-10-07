@@ -1,6 +1,6 @@
 ## Maths for DSA
 
-1. **Sieve of Eratosthenes**
+## **Sieve of Eratosthenes**
 - The Sieve of Eratosthenes is an ancient algorithm used to find all prime numbers up to any given limit
 - in `/count_primes.cpp`(brute force approach) code we're calculating each number from `2` to `num` to determine is it prime or not. So time complexity is `O(n^n)`.
 
@@ -33,7 +33,7 @@ But if you define `int` array globally then it's max limit is `10^7` and for `bo
     - An array of size Θ(n) may not fit in memory
     - The simple Sieve is not cached friendly even for slightly bigger n. The algorithm traverses the array without locality of reference
 
-**Segmented Sieve**:
+## **Segmented Sieve**:
 - This algorithm overcomes the space complexity issue of the Sieve of Eratosthenes.
 - If we've input `n` very large (say 10<sup>9</sup> or higher) then normal sieve will try to create an array of size `n + 1`. And many programming language environment may not allow to create this big size of array. It's very inefficient, consuming too much memory.
 - It divides the range `[0..n-1]` into different segments and computes primes in all segments one by one.
@@ -47,8 +47,9 @@ So, while both algorithms are used for finding prime numbers, the Segmented Siev
 
 ## Euclid's Algortithm
 1. **GCD/ HCF:**
-- It's a one factor which is maximum and can divide both the numbers perfectly and give remainder 0.
+- It's a one factor which is maximum and can divide both the numbers perfectly and give remainder 0. The GCD of two numbers is the largest number that divides both of them without leaving a remainder.
 Example:
 <img src="/Maths For DSA/image.png" width=300 alt="GCD/HCF" />
 
 - Formula: `gcd(a, b) = gcd(a - b, b) => gcd(a % b, b)`
+- Learn more about Euclid's Algorithm at: <a href="https://www.codingninjas.com/studio/library/gcd-euclidean-algorithm">codingninjas.com</a>

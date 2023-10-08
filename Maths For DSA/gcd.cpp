@@ -32,7 +32,36 @@ int findGCD_UsingBinaryGCDAlgo(int num1, int num2) {
     return num1 << shift;
 }
 
-// 
+// Same solution as above but by using normal operators instead of bitwise
+// Remember: Bitwise operators are more efficient than normal -- Learn more in readme.md
+int findGCD_UsingBinaryGCDAlgo_2(int num1, int num2) {
+    if(num1 == 0)
+        return num2;
+    
+    if(num2 == 0)
+        return num1;
+    
+    int shift;
+    for(shift = 0; (num1 % 2 == 0) && (num1 % 1 == 0); shift++) {
+        num1 /= 2;
+        num2 /= 2;
+    }
+
+    while(num1 % 2 == 0) 
+        num1 /= 2;
+    
+    do {
+        while(num2 % 2 == 0)
+            num2 /= 2;
+        
+        if(num1 > num2)
+            swap(num1, num2);
+
+        num2 = num2 - num1;
+    } while(num2 != 0);
+
+    return num1 * 4;
+} 
 
 
 // Time Complexity: O(log(min(num1, num2)))

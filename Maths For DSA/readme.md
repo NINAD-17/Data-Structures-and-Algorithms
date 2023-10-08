@@ -47,6 +47,8 @@ So, while both algorithms are used for finding prime numbers, the Segmented Siev
 
 ## Euclid's Algortithm
 1. **GCD/ HCF:**
+- GCD - Greatest common divisor
+
 - It's a one factor which is maximum and can divide both the numbers perfectly and give remainder 0. The GCD of two numbers is the largest number that divides both of them without leaving a remainder.
 Example:
 <img src="/Maths For DSA/image.png" width=300 alt="GCD/HCF" />
@@ -75,3 +77,11 @@ Example:
     - Also, in your return statement, you’re multiplying num1 by 4 (return num1 * 4;). This can be replaced with left shift by 2 (return num1 << shift;) to multiply num1 by the number of common factors of 2 in the original numbers.
 
     - So, while your code is correct, using bitwise operators can make it more efficient.
+
+## LCM (Least common multiple)
+- It is a method to find the smallest common multiple between any two or more numbers.
+
+- Formula:
+    <img src="![LCM formula](image-1.png)" />
+
+- LCM(a, b) * GCD(a, b) = a * b

@@ -1,4 +1,4 @@
-## Maths for DSA
+# Maths for DSA
 
 ## **Sieve of Eratosthenes**
 - The Sieve of Eratosthenes is an ancient algorithm used to find all prime numbers up to any given limit
@@ -85,3 +85,29 @@ Example:
     <img src="![LCM formula](image-1.png)" />
 
 - LCM(a, b) * GCD(a, b) = a * b
+
+
+## Modular Arithmatics
+- Modular arithmetic is a type of arithmetic that deals with numbers that are divided by a certain number, called the modulus.
+- The modulus is usually a prime number, but it can be any number.
+- In modular arithmetic, we only care about the remainder of a division operation, not the quotient.
+- Modular arithmetic is useful for a variety of reasons, including simplifying calculations and solving competitive programming problems.
+-  The result of the expression `n mod m` is known as n's residue modulo m.
+
+- Answer of `a % n` is always between `0` & `(n - 1)` included.
+    `a % n ===> [0 -----> (n - 1)]`
+
+- Learn more about Modulo Operator on: <a href="https://codeforces.com/blog/entry/72527">codeforces.com</a>
+
+- Some important identities about the modulo operator
+    - `(a + b) % m = (a % m) + (b % m) % m`
+    - `(a - b) % m = (a % m) - (b % m) % m`
+    - `(a * b) % m = (a % m) * (b % m) % m`
+
+## Fast Exponentiation
+- To reduce time complexity of brute force apporoach to find solution of problem `a^b` we use this.
+```
+        |--> (a^(b/2))^2 -----------> If b is even
+a^b ----|
+        |--> [(a^(b/2))^2] * a -----> If b is odd
+```

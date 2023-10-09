@@ -88,7 +88,7 @@ Example:
 
 
 ## Modular Arithmatics
-- Modular arithmetic is a type of arithmetic that deals with numbers that are divided by a certain number, called the modulus.
+- Modular arithmetic is a type of arithmetic that deals with numbers that are divided by a certain number, called the modulus. Modular arithmetic involves numbers “wrapping around” upon reaching a certain value, known as the modulus.
 - The modulus is usually a prime number, but it can be any number.
 - In modular arithmetic, we only care about the remainder of a division operation, not the quotient.
 - Modular arithmetic is useful for a variety of reasons, including simplifying calculations and solving competitive programming problems.
@@ -111,3 +111,8 @@ Example:
 a^b ----|
         |--> [(a^(b/2))^2] * a -----> If b is odd
 ```
+
+
+## Pigeonhole Principle
+- The principle states that if you have more items (pigeons) than containers (pigeonholes), then at least one container must contain more than one item. For example, if you have 10 pigeons and 9 pigeonholes, then at least one pigeonhole must contain more than one pigeon.
+- Example: Given that the population of London is greater than the maximum number of hairs that can be present on a human’s head, then the pigeonhole principle requires that there must be at least two people in London who have the same number of hairs on their heads.

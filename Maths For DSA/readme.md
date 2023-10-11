@@ -81,8 +81,8 @@ Example:
 ## LCM (Least common multiple)
 - It is a method to find the smallest common multiple between any two or more numbers.
 
-- Formula:
-    <img src="![LCM formula](image-1.png)" />
+- Formula: <br>
+    <img src="image-1.png" width=300 />
 
 - LCM(a, b) * GCD(a, b) = a * b
 
@@ -116,3 +116,21 @@ a^b ----|
 ## Pigeonhole Principle
 - The principle states that if you have more items (pigeons) than containers (pigeonholes), then at least one container must contain more than one item. For example, if you have 10 pigeons and 9 pigeonholes, then at least one pigeonhole must contain more than one pigeon.
 - Example: Given that the population of London is greater than the maximum number of hairs that can be present on a human’s head, then the pigeonhole principle requires that there must be at least two people in London who have the same number of hairs on their heads.
+
+
+## Inclusive Exclusive Principle
+- **Principle**: The Inclusion-Exclusion Principle is a combinatorial way to compute the size of a set or the probability of complex events². It relates the sizes of individual sets with their union².
+
+- **Statement**: To compute the size of a union of multiple sets, it is necessary to sum the sizes of these sets separately, and then subtract the sizes of all pairwise intersections of the sets, then add back the size of the intersections of triples of the sets, subtract the size of quadruples of the sets, and so on, up to the intersection of all sets².
+
+- **Example 1**: How many binary strings of length 8 either start with a ‘1’ bit or end with two bits ’00’?¹
+    - If the string starts with one, there are 7 characters left which can be filled in 2^7 = 128 ways.
+    - If the string ends with ’00’ then 6 characters can be filled in 2^6 = 64 ways.
+    - Strings that start with ‘1’ and end with ’00’ have five characters that can be filled in 2^5 =32 ways.
+    - So by the inclusion-exclusion principle we get- Total strings = 128 + 64 – 32 = 160¹
+
+- **Example 2**: How many numbers between 1 and 1000, including both, are divisible by 3 or 4?¹
+    - Number of numbers divisible by 3 = floor(1000/3) = 333.
+    - Number of numbers divisible by 4 = floor(1000/4) = 250.
+    - Number of numbers divisible by both (i.e., divisible by their LCM which is 12) = floor(1000/12) = 83.
+    - Therefore, number of numbers divisible by either 3 or 4 = 333 + 250 – 83 = 500¹

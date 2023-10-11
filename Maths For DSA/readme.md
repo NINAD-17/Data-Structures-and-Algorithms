@@ -89,10 +89,16 @@ Example:
 
 ## Modular Arithmatics
 - Modular arithmetic is a type of arithmetic that deals with numbers that are divided by a certain number, called the modulus. Modular arithmetic involves numbers “wrapping around” upon reaching a certain value, known as the modulus.
+- It’s like a clock: when you add 4 hours to 11 o’clock, you get 3 o’clock, not 15 o’clock. This is because clocks “wrap around” every 12 hours
 - The modulus is usually a prime number, but it can be any number.
 - In modular arithmetic, we only care about the remainder of a division operation, not the quotient.
 - Modular arithmetic is useful for a variety of reasons, including simplifying calculations and solving competitive programming problems.
 -  The result of the expression `n mod m` is known as n's residue modulo m.
+- In programming, modular arithmetic is often used for several reasons:
+    - To keep numbers within a certain range: If you’re working with an array of size n, you might use the modulus operator to ensure that an index stays within the range 0 to n-1.
+    - To prevent overflow: When dealing with large numbers, you can use the modulus operator to prevent the number from exceeding the maximum limit of the data type.
+    - To cycle through values: If you want to cycle through a set of values, you can use the modulus operator. For example, in graphics programming, colors might be represented as integers from 0 to 255. If you want to cycle through these colors, you could use the modulus operator.
+    - In hash functions: The modulus operator is often used in hash functions to distribute values evenly across an array.
 
 - Answer of `a % n` is always between `0` & `(n - 1)` included.
     `a % n ===> [0 -----> (n - 1)]`
@@ -103,6 +109,16 @@ Example:
     - `(a + b) % m = (a % m) + (b % m) % m`
     - `(a - b) % m = (a % m) - (b % m) % m`
     - `(a * b) % m = (a % m) * (b % m) % m`
+
+- That's a great question! In modular arithmetic, it's true that different numbers can have the same remainder when divided by the modulus. For example, if the modulus is 12, then 15 and 3 both have a remainder of 3. 
+
+- However, in many applications of modular arithmetic, this "wrapping around" behavior is exactly what we want. For example, when working with hours on a clock, we don't care about the difference between 3 AM and 3 PM - we just care that they're both "3 hours past the hour". 
+
+- In other cases, we might use modular arithmetic to keep numbers within a certain range to prevent overflow, even though this means that different numbers might map to the same result.
+
+- If we need to differentiate between numbers that have the same remainder when divided by the modulus, then we would need to use a different technique. For example, we might choose a larger modulus, or use a different system altogether.
+
+- In summary, while modular arithmetic does mean that different numbers can map to the same result, this is often a useful property and not a problem. When it is a problem, there are other techniques we can use.
 
 ## Fast Exponentiation
 - To reduce time complexity of brute force apporoach to find solution of problem `a^b` we use this.

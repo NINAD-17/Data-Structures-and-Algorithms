@@ -56,7 +56,8 @@ int main() {
             if(firstMultiple < l) firstMultiple += pr;
 
             for(int j = max(firstMultiple, pr*pr); j <= r; j+=pr)
-                dummy[j - l] = 0; // To find dummy index dummy[j - l]. Ex -> 110 - 110 = 0 index
+                // if(j - l >= 0)
+                    dummy[j - l] = 0; // To find dummy index dummy[j - l]. Ex -> 110 - 110 = 0 index
         }
 
         for(int i = l; i <= r; i++) {

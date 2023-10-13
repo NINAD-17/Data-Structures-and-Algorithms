@@ -5,7 +5,7 @@
 - For example, `int num = 5;` Here, `num` is mapped to the address of a memory location where `5` is stored.  `num ----> address`
 - `cout << num << endl;` In this case, it first finds the address mapped to the `num` variable and then prints the content from that address (here it is `5`).
 
-## Address of Operator (&) 
+## 'Address of' Operator (&) 
 - It can be used to find the address of any variable mapped to it.
 - It provides the address in Hexadecimal format.
 - For example: `cout << "Address of num: " << &num << endl;`
@@ -35,3 +35,16 @@ int *f = e;
     - For example: `int *ptr = &num;`
     - If you did `ptr = ptr + 1;` and assume the address of `ptr` as `101`;
     - Then it will become `105`, meaning it will move to the next integer (the size of an integer is 4 bytes therefore `101 + 4 = 105`)
+
+
+## Pointers in Array
+- `int arr[10];` Here size of array is `10 * 4 (size of int) = 40 bytes`.
+- Name of the array points to first location of that array. 
+    Example: Here array name is `arr` which is point to `arr[0]` memory location.
+- You can also access memory location by using **Address of** operator as `&arr[0]` or `&arr`.
+
+**How compiler computes `arr[i]`?**
+- Formula: `arr[i] = *(arr + i)`
+- Example: Assume first location of array as `102`. So now `arr[2] = *(102 + (2 * 4))` Here `4` is the size of `int`. So `arr[2] = *(110)`. And `110` is the address of 2nd index of array.
+- OR above formula can also be written as, `i[arr] = *(arr + i)`
+- *Note: `arr[i]` & `i[arr]` both are same.*

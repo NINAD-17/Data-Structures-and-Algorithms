@@ -48,3 +48,34 @@ int *f = e;
 - Example: Assume first location of array as `102`. So now `arr[2] = *(102 + (2 * 4))` Here `4` is the size of `int`. So `arr[2] = *(110)`. And `110` is the address of 2nd index of array.
 - OR above formula can also be written as, `i[arr] = *(arr + i)`
 - *Note: `arr[i]` & `i[arr]` both are same.*
+
+- **NOTE**: Content of symbol table can't be changed.
+    - Example: `arr = arr + 1;` It's not possible. (ERROR)
+    ```
+    int *ptr = &arr[0];
+    ptr = arr + 1; // It's possible
+    ```
+
+## Pointers in Char Arr
+- For `int` array and `char` arr, `cout` function is differently implemented.
+- For `int` array, `cout << arr;` will print address of 1st array element. But in case of `char` array, `cout << ch;` will print all characters from `char` array.
+- In `char` array if you create a pointer and point it to `char` array's first element and if you use `cout << pointer_name;` then it will not show you address of first element of `char` array but it will show you all characters from that array until it gets '\0' element.
+
+```
+    char ch2 = 'A';
+    char *chPtr2 = &ch2;
+    cout << "Printing content of ch2 using pointer: " << chPtr2 << endl; 
+```
+- As we know, &ch2 give value of ch2 and not address of ch2. So when we try to print chPtr2, then compiler will start to show all the content from ch2 until it get `'\0'` character. So it will give you random output after printing ch2 content. Ex. `A��a`.
+- Behind the scenes -> 
+    1. `char ch[6] = 'ABCDE';`: In this case, ABCDE will first stored in temporary memory as `ABCDE\0` and then it will copy to ch;
+    2. `char *ptr = &ch[0];`: In this case, `ABCDE\0` stored in temp memory. and then first element's address will be given to `ptr`.
+- So don't do this -> `*charPtr = &ch`;
+
+
+## Pointers in functions
+- When you pass array in a function then it not copy full array to that function but it passes a pointer of that array to function.
+- So if you find size of that `arr` in function then it will give you output `8` because pointer stores memory address.
+- You can also able to use `*arr` in parameter instead of `arr[size]`;
+- Benefit of this (array can pass as pointer) is that we can also able to pass only part of array to a function as (arr + index). Index is a from which index you want to pass an array.
+

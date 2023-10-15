@@ -79,3 +79,23 @@ int *f = e;
 - You can also able to use `*arr` in parameter instead of `arr[size]`;
 - Benefit of this (array can pass as pointer) is that we can also able to pass only part of array to a function as (arr + index). Index is a from which index you want to pass an array.
 
+
+## Why we use pointers as `data_type *` & not as `pointer ptr`?
+- As we define a variable as `int num;` we don't have option to create pointer as `pointer ptr = &num;`, we have to use `int *ptr = &num` only.
+- We use `int *ptr` because it shows,
+    - Which type of data stored in it?
+    - How many bytes should consider to allocate memory   
+
+# Double Pointers
+
+- If you want to create pointer corresponding to a value Ex. `int i = 5` then you've to use `int* ptr = &i` and if you want to create a pointer corresponding to `ptr` then you've to use `int**`.
+```
+int i = 5;
+int *ptr = &i;
+int **Ptr2 = &ptr; // Double pointer
+int ***ptr3 = &ptr2; // you can also able to use this three pointer ans so on.
+```
+<img width=300 src="image.png" alt="Double pointer" />
+ 
+In symbol table, 
+<img width=300 src="image-1.png" alt="Symbol Table" />

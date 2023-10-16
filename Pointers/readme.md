@@ -97,5 +97,5 @@ int ***ptr3 = &ptr2; // you can also able to use this three pointer ans so on.
 ```
 <img width=300 src="/Pointers/image.png" alt="Double pointer" />
  
-In symbol table, 
+In symbol table, <br>
 <img width=300 src="/Pointers/image-1.png" alt="Symbol Table" />

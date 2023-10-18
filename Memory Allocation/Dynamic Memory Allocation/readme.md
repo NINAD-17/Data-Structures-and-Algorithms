@@ -16,7 +16,7 @@ To create variable size arrays, use **HEAP**.
 
 Heap memory allocation is based on runtime. To use heap memory, use the `new` keyword.
 
-For instance, to allocate memory for a character, use `new char;`. This will allocate the required memory for one `char` and return the address of that memory location. We can't give a name to this memory like we do in stack allocation (`int num;` where `num` is the name of that memory). In heap allocation, it only returns an address. We need a pointer to store that address so we can access that memory location using the pointer's name. For example: `char *ch = new char;`.
+For instance, to allocate memory for a character, use `new char;`. This will allocate the required memory for one `char` and return the address of that memory location. We can't give a name to this memory like we do in stack allocation (`int num;` where `num` is the name of that memory). In heap allocation, it only returns an address. We need a pointer to store that address so we can access that memory location using the pointer's name. For example: `char *ch = new char;`.<br><br>
 <img width=300 src="/Memory Allocation/Dynamic Memory Allocation/image.png" alt="Dynamic memory allocation Example" />
 
 To create an array of size `5` in heap, use `int *arr = new int[5];`. The total memory required would be `5 * (int_size = 4)` i.e., `20 bytes` for the array and `8 bytes` for the pointer, totaling to `28 bytes`.
@@ -27,4 +27,4 @@ To create an array of size `5` in heap, use `int *arr = new int[5];`. The total 
 - In dynamic allocation, manually release require.
 - To release memory use `delete` keyword.
 - Example: `delete num;`, `delete []arr`
-- Example: Memory Allocation\Dynamic Memory Allocation\Example_using_while_loop.cpp 
+- Example: <a href="Memory Allocation\Dynamic Memory Allocation\Example_using_while_loop.cpp">Example using while loop</a>

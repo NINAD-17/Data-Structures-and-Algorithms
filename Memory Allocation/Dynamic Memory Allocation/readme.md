@@ -27,4 +27,4 @@ To create an array of size `5` in heap, use `int *arr = new int[5];`. The total 
 - In dynamic allocation, manually release require.
 - To release memory use `delete` keyword.
 - Example: `delete num;`, `delete []arr`
-- Example: <a href="Memory Allocation\Dynamic Memory Allocation\Example_using_while_loop.cpp">Example using while loop</a>
+- Example: `Memory Allocation\Dynamic Memory Allocation\Example_using_while_loop.cpp`

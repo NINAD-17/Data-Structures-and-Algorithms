@@ -1,4 +1,4 @@
-# Memory Allocation
+# Reference Variable
 
 ## Reference Variable
 - Same memory but can have different names.
@@ -21,11 +21,11 @@ In this example, the memory block where `5` contain for that block 2 names are m
     Here variable `n` is passed by reference means it's a variable which is pointing to same memory location which is in the main function.
     Means, if `passByReference(a);` is a call then `n` and `a` are two names of that same memory location.
 
-### Pass by value VS Pass by Reference
+## Pass by value VS Pass by Reference
 - In *pass by ref.* no new memory is created. But in *pass by value* a copy is created.
 - In *pass by ref* memory is same but name is different.
 
-### Using reference variable as return in output
+## Using reference variable as return in output
 **Note: It's a bad practice** reason given below.
 ```
 int& update(int n) {

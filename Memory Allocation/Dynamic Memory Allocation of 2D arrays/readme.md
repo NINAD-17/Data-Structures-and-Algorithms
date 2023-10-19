@@ -41,3 +41,9 @@ Here for each element of array `arr` we've allocate a array whose first element 
 - If we did 2ns step first then each arrays memory will not be deleted and all pointers will also lost and you can't access it.
 - When dealing with a dynamically allocated 2D array in C++, it’s crucial to first delete the memory allocated for each sub-array (or row), and then delete the memory allocated for the main array (or array of pointers). This is because each sub-array is a separate block of memory on the heap, and deleting the main array only deletes the memory where the pointers to these sub-arrays are stored, not the sub-arrays themselves.
 - If you were to delete the main array first, you would lose access to the pointers to the sub-arrays, resulting in a memory leak as you would no longer be able to properly delete the sub-arrays.
+
+
+## Jagged Arrays
+- In computer science, a jagged array is a collection of arrays where each array can contain a different number of elements. Jagged arrays are also known as "ragged arrays" or "irregular arrays".
+- Jagged arrays are a special type of multidimensional array where there are a variable number of columns in each row. For example, a 2D array that consists of a different-sized array in every row will be a jagged array.
+- Example: arr[][] = { {0, 1, 2}, {6, 4}, {1, 7, 6, 8, 9}, {5} }

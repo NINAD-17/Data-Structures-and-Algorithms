@@ -1,0 +1,43 @@
+# Dynamic Memory Allocation in 2D arrays
+
+## How to make 2D arrays dynamically?
+
+**What `arr[3][4]` means?**
+- It means that 3 arrays and each has 4 columns in it.
+<img src="/Memory Allocation/Dynamic Memory Allocation of 2D arrays/image.png" />
+
+- `int *arr = new int[n]` It means that, bring `n` numbers of `int` blocks.
+- We know that arrays are showed by `int*`. So we need multiple `int*` for 2D array. 
+- `int **arr = new int*[n]` It means bring multiple `n` numbers of `int*` and store in `int** arr`.
+
+```
+    // Creating multiple rows (Or it's just an array but assuming each element of this array as a starting point of new array or a row)
+    int **arr = new int*[rows];
+
+    // For each element of that array, assign new array of size 'cols'
+    for(int i = 0; i < rows; i++)
+        arr[i] = new int[cols];
+```
+
+- Visualization:
+<img src="/Memory Allocation/Dynamic Memory Allocation of 2D arrays/image-1.png" />
+
+Here for each element of array `arr` we've allocate a array whose first element address will store in `arr`'s elements.
+
+
+## Always Keep in mind to free used heap memory.
+
+```
+    // Step 1: First we've deallocate memory taken by each elements array.
+    for(int i = 0; i < rows; i++) 
+        delete []arr[i];
+    
+    // Step 2: Release memory of `arr`
+    delete []arr;
+```
+
+- To release memory of 2D array, 1st we've to release memory of each array which is linked to `arr` elements.
+- Then we've to release memory of `arr` array.
+- If we did 2ns step first then each arrays memory will not be deleted and all pointers will also lost and you can't access it.
+- When dealing with a dynamically allocated 2D array in C++, it’s crucial to first delete the memory allocated for each sub-array (or row), and then delete the memory allocated for the main array (or array of pointers). This is because each sub-array is a separate block of memory on the heap, and deleting the main array only deletes the memory where the pointers to these sub-arrays are stored, not the sub-arrays themselves.
+- If you were to delete the main array first, you would lose access to the pointers to the sub-arrays, resulting in a memory leak as you would no longer be able to properly delete the sub-arrays.

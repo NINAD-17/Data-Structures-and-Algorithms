@@ -11,3 +11,5 @@
 - Example: `#define PI 3.14`. 
 - This means that during preprocessing, the preprocessor will replace all occurrences of `PI` with `3.14`. This can be particularly useful for defining constants that are used multiple times throughout your code.
 - Example: `#define AREA(l, b) (l * b)` Whenever the compiler finds `AREA(l, b)` in the program it replaces it with the macros definition i.e., `(l*b)`.
+
+- Function-like macros:  These macros are the same as a function call. It replaces the entire code instead of a function name. Pair of parentheses immediately after the macro name is necessary. If we put a space between the macro name and the parentheses in the macro definition, then the macro will not work. 

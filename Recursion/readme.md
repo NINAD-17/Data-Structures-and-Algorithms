@@ -25,3 +25,7 @@ In the above code, solve is a recursive function that calls itself with a smalle
 - 3 components in recursion - base case, recursive relation, processing
 - If recursive relation is in the end then it's called **Tail recursion**.
 - If recursive relation is comes before processing is called **Head recursion**.
+
+- Remember: Just solve one case and the rest will happen automatically. 
+"बस एक केस सोल्व करो बाकी सब अपने आप हो जाएगा." - <a href="https://youtu.be/zg8Y1oE4qYQ?si=WLbLKLG8v2wZ9MYw&t=251">Love Babber</a>
+- In `reach_home.cpp` example after `src == dest` then function stack is going to empty by `reach_home(10, 10)` will be removed from stack first then `reach_home(9, 10)` ..... `reach_home(1, 10)` like that.

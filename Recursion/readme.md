@@ -31,7 +31,7 @@ In the above code, solve is a recursive function that calls itself with a smalle
 "बस एक केस सोल्व करो बाकी सब अपने आप हो जाएगा." - <a href="https://youtu.be/zg8Y1oE4qYQ?si=WLbLKLG8v2wZ9MYw&t=251">Love Babber</a>
 - In `reach_home.cpp` example after `src == dest` then function stack is going to empty by `reach_home(10, 10)` will be removed from stack first then `reach_home(9, 10)` ..... `reach_home(1, 10)` like that.
 
-- `Sum_of_array_elements.cpp` recursive tree
+- `Sum_of_array_elements.cpp` recursive tree <br>
     <img src="/Recursion/sum of array elements.jpg" width=300 />
 
 

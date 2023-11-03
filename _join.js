@@ -1,4 +1,4 @@
-const nameOfFile = "Rotate a Matrix by 90 degrees";
+const nameOfFile = "Count Ways To Reach The N-th Stairs";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");

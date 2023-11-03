@@ -53,4 +53,12 @@ However, if you were to modify your function in the future or use a similar patt
 - Both recursive and iterative versions of linear search have a time complexity of O(n). However, in terms of space complexity, the recursive version uses O(n) space due to the call stack, while the iterative version uses O(1) space. Therefore, from a space complexity standpoint, the iterative approach is more optimal.
 - Also, recursion involves function call overheads and can lead to stack overflow for large inputs. So, in general, for a problem like linear search where a simple iterative solution exists, it’s usually more efficient to use the iterative approach. But remember that recursion can be very useful and elegant for problems where the solution involves solving smaller instances of the same problem.
 - Same explanation for binary search
+- Points: 
+    - **Stack Overflow:** Recursive functions use a call stack to handle function calls. If the depth of recursion is too high, it can lead to a stack overflow error. In the case of linear search, if the array size is large, using recursion could potentially lead to this issue.
+
+    - **Overhead of Function Calls:** Each recursive call adds an extra layer of function call overhead. This includes the cost of pushing and popping elements from the call stack, which can make recursion slower than iteration for algorithms like linear and binary search.
+
+    - **Space Complexity:** Recursive implementations of these algorithms have a higher space complexity (O(n) for linear search and O(log n) for binary search) due to the additional space required on the call stack. On the other hand, iterative versions of these algorithms only require constant O(1) space.
+
+    - **Readability and Simplicity:** While recursion can make some complex algorithms more readable and easier to understand, this is not necessarily the case for simple algorithms like linear and binary search. An iterative approach can be just as readable, if not more so, and doesn’t come with the potential drawbacks of recursion.
 

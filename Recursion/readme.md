@@ -62,3 +62,11 @@ However, if you were to modify your function in the future or use a similar patt
 
     - **Readability and Simplicity:** While recursion can make some complex algorithms more readable and easier to understand, this is not necessarily the case for simple algorithms like linear and binary search. An iterative approach can be just as readable, if not more so, and doesn’t come with the potential drawbacks of recursion.
 
+## Bitwise or Arithmetic Operations?
+- Both if(n & 1) and if(n % 2 == 0) can be used to check if a number is odd or even, respectively. However, the choice between the two often depends on the specific situation and requirements:
+
+- Performance: Bitwise operations are generally faster than arithmetic operations. So, n & 1 might be slightly faster than n % 2. However, modern compilers are very good at optimizing such operations, and the difference is usually negligible in practice.
+
+- Readability: For someone unfamiliar with bitwise operations, n % 2 == 0 might be more readable and immediately understandable as it directly translates to “if n divided by 2 leaves a remainder of 0, then n is even”.
+
+- In general, unless you’re working in a performance-critical context, it’s often better to prioritize code readability and clarity. So, n % 2 == 0 might be preferred in most cases. But if you and your team are comfortable with bitwise operations and performance is a concern, n & 1 could be a good choice. It’s always important to consider the trade-offs in your specific context.

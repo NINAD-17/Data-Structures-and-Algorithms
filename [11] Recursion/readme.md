@@ -70,3 +70,20 @@ However, if you were to modify your function in the future or use a similar patt
 - Readability: For someone unfamiliar with bitwise operations, n % 2 == 0 might be more readable and immediately understandable as it directly translates to “if n divided by 2 leaves a remainder of 0, then n is even”.
 
 - In general, unless you’re working in a performance-critical context, it’s often better to prioritize code readability and clarity. So, n % 2 == 0 might be preferred in most cases. But if you and your team are comfortable with bitwise operations and performance is a concern, n & 1 could be a good choice. It’s always important to consider the trade-offs in your specific context.
+
+
+## Sorting Algorithms
+Note: Merge Sort is faster than Selection, Insersion and Bubble sort.
+
+1. Merge Sort: You can sort is using two methods,
+    - Create a new array and copy values
+    - Use indexes
+
+2. Quick Sort: 
+    -  Partition
+        - Take a pivot
+        - Count all elements less than pivot.
+        - Pivot = starting index + count; It's a position of pivot.
+        - Satisfy condition --> right part > pivot element and left part < pivot element.
+
+    ii. Recursion

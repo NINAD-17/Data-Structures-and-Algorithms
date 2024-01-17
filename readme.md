@@ -4,4 +4,5 @@ This repository contains my solutions to various problems related to data struct
 ## Topics
 - Basic (conversion of number systems such as octal to binary, binary to decimal, typecasting, fibonacci series, -ve number to binary......)
 - Arrays (linear search, binary search problems, sorting)
+- 2D Arrays
 - Strings

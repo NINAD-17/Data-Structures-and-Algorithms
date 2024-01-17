@@ -6,6 +6,11 @@
 - To use an identifier from the standard library, you need to specify that it belongs to the std namespace using the scope resolution operator `::`.
 - Adding using namespace std at the top of your source code means you won’t have to type the `std::` prefix constantly.
 - However, using this statement can lead to name collisions if you’re using multiple libraries.
+- **Identifiers**: Identifier is a name used to identify a variable or function. However, in C++, identifiers are not just limited to variables and functions. They can also refer to other entities such as objects, classes, structures, and more.
+- In the context of `std::cout`, `std::cin`, and `std::endl`:
+    - `std::cout` and `std::cin` are objects of the `ostream` and `istream` classes respectively. They are used for output and input operations.
+    - `std::endl` is a function that inserts a new line character and flushes the output buffer.
+- When we say `using namespace std`, we’re telling the compiler to look into the std namespace if it doesn’t find an identifier in the current scope. This allows us to use cout, cin, endl, and other identifiers from the std namespace directly, without prefixing them with `std::`.
 
 
 ## return 0;
@@ -23,7 +28,7 @@
 
 
 ## TypeCasting in CPP
-Type casting in C++ refers to the process of converting a value of one data type to another data type1. This can be useful in situations where we need to change the type of a variable to perform a certain operation or pass it to a function that requires a different data type.
+Type casting in C++ refers to the process of converting a value of one data type to another data type. This can be useful in situations where we need to change the type of a variable to perform a certain operation or pass it to a function that requires a different data type.
 
 - **Implicit Type Conversion**: is automatically performed by the compiler when a value is copied to a compatible type.
 Ex. `int a = 'a'`

@@ -47,8 +47,8 @@ Here we're copying ASCII value of char 'a' to into a.
 - If we combine the ranges of signed and unsigned 32-bit integers, we get a range from -2147483648 to 4294967295
 - Default int can store both positive and negetive values. But if you want only positive numbers to be store then use `unsigned int`
 
-
-In given example, When you assign an integer value to a char variable, the value is implicitly converted to a char by taking the value modulo 256 (since a char is 1 byte and can represent values from 0 to 255). In this case, 123456 modulo 256 is 64, which is the ASCII value of the character '@'. That’s why you get '@' as the output.
+Explaination: `/Type_Casting.cpp`
+- In given example, When you assign an integer value to a char variable, the value is implicitly converted to a char by taking the value modulo 256 (since a char is 1 byte and can represent values from 0 to 255). In this case, 123456 modulo 256 is 64, which is the ASCII value of the character '@'. That’s why you get '@' as the output.
 
 
 ## Operators

@@ -17,6 +17,7 @@ int compOfBase10Int(int base10Int) {
 }
 
 // Lengthy code written by me
+// This function returns output as a binary number.
 int complimentOfBase10Int(int base10Int) {
     int count = 0, ans = 0, i = 0;
     int complimentOfInt = ~base10Int;

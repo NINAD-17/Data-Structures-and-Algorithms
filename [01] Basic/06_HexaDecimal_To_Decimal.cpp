@@ -6,7 +6,12 @@ using namespace std;
 
 int convertItToNum(char ch) {
     int num[6] = {10, 11, 12, 13, 14, 15};
-    return num[ch - 65];
+    if(ch >= 'A' && ch <= 'F')
+        return num[ch - 65];
+    else if(ch >= 'a' && ch <= 'f')
+        return num[ch - 97];
+    else
+        return -1;
 }
 
 int hexaDecToDecimal(string num) {
@@ -17,7 +22,7 @@ int hexaDecToDecimal(string num) {
         char lastNum = num[num.length() - 1];
 
         if(lastNum >= 'A')
-            lastNumInt = convertItToNum(int(lastNum));
+            lastNumInt = convertItToNum(int(lastNum)); // You can also use only 'lastNum'. It's same.
         else
             lastNumInt = lastNum - '0';
 

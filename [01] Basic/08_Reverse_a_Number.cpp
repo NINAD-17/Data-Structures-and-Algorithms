@@ -6,7 +6,7 @@ using namespace std;
 // Note: INT_MAX and INT_MIN check
 // This check is necessary because if ans is outside the range of values that can be 
 // stored in an int, the subsequent calculation of ans = ans * 10 + lastDigit could result 
-//in an incorrect value due to integer overflow or underflow.
+// in an incorrect value due to integer overflow or underflow.
 
 int reverseANum(int num) {
     int ans = 0, i = 0;

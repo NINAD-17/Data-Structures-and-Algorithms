@@ -33,10 +33,6 @@ int decToBin(int decNum) {
     return binaryNumber;
 }
 
-int negetiveDecToBin(int num) {
-    cout << "Binary of " << num << " is " << decToBin(num) << endl;
-}
-
 int main() {
 
     int decNum;
@@ -45,7 +41,7 @@ int main() {
     cout << "Enter a number: ";
     cin >> decNum;
 
-    cout << negetiveDecToBin(decNum) << endl;
     cout << "Binary of " << decNum << " is " << decToBin(decNum) << endl;
+    cout << "Binary of " << decNum << " is " << usingDivBy2Method(decNum) << endl;
     return 0;
 }

@@ -38,7 +38,7 @@ void intersectionOfTwoNonSortedArr1(int *arr1, int n, int *arr2, int m, int *int
     int count = INT_MIN; // If you want only unique elements in intersection array
     while(i < n && j < m) {
         if(arr1[i] == arr2[j]) {
-            if(count == arr1[i]) { // If there is another pair of intersections, it will not be added to the intersection array.
+            if(count == arr1[i]) { // If there is another pair of intersections, it will not be added to the intersection array. As array is sorted.
                 i++;
                 continue;
             }

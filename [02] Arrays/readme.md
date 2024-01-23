@@ -56,11 +56,16 @@ int arr[size]; // 💀⚠️
   - Time Complexity is O(N) and Space complexity is O(1)
   - **Explaination**:  The idea is to XOR all the elements in the array and then XOR the result with all numbers from 1 to n. Since XOR is both commutative and associative, the order in which we perform the XORs does not matter. Also, since a XOR a = 0 for any number a, all the elements in the array except for the duplicate element will cancel out. The final result will be the duplicate element.
 
+  -  The `XOR` of all elements in the **array** and all **numbers** from 1 to n is computed. The result is the duplicate number.
+
 2. **Unordered Map**:
   - The unordered_map::count() is a builtin method in C++ which is used to count the number of elements present in an unordered_map with a given key.
   - Note: As unordered_map does not allow to store elements with duplicate keys, so the count() function basically checks if there exists an element in the unordered_map with a given key or not.
   - This function returns 1 if there exists a value in the map with the given key, otherwise it returns 0.
   - Refer this artical on <a href="https://www.geeksforgeeks.org/unordered_map-count-in-c/">GeekForGeeks -> Unordered_Map</a>
+
+  - Why use `unordered_map` instead of `map`:
+   Both unordered_map and map in C++ can be used to count the frequency of elements in an array. The main difference between them is that unordered_map provides average constant-time complexity for search, insert, and delete operations, while map provides logarithmic time complexity for these operations. This is because unordered_map is implemented as a hash table, while map is implemented as a self-balancing binary search tree (like Red-Black Tree). Therefore, if order of elements does not matter, unordered_map is usually a better choice because of its lower time complexity.
 
 
 ## **Binary Search**:

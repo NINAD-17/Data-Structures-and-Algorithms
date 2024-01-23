@@ -3,6 +3,24 @@
 #include <unordered_map>
 using namespace std;
 
+// Optimal solution using unordered map
+// Time complexity: O(n)
+void findAllDuplicatesUsingUnorderedMap(int *arr, int size, int *ansArr) {
+    unordered_map<int, int> freq;
+    int index = 0;
+    for(int i = 0; i < size; i++) 
+        freq[arr[i]]++;
+
+    cout << "Duplicate elements are: ";
+    for(auto it = freq.begin(); it != freq.end(); it++) {
+        if(it -> second > 1)
+            ansArr[index++] = it -> first;
+    }
+}
+
+
+// Brute force solution
+// Time complexity: O(n^2)
 void findAllDuplicates(int *arr, int size, int* ansArr) {
     int k = 0;
     for(int i = 0; i < size - 1; i++) {
@@ -42,7 +60,8 @@ int main() {
     for(int i = 0; i < size; i++) 
         ansArr[i] = INT_MIN;
     
-    findAllDuplicates(arr, size, ansArr);
+    // findAllDuplicates(arr, size, ansArr);
+    findAllDuplicatesUsingUnorderedMap(arr, size, ansArr);
 
     if(ansArr[0] == INT_MIN)
         cout << "No duplicate element is found" << endl;

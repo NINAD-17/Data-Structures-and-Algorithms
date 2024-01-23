@@ -3,6 +3,26 @@
 #include <algorithm>
 using namespace std;
 
+// Optimal approach
+// Time Complexity: O(n log n)
+void pairSum2(int *arr, int n, int sum, int *pairsArr) {
+    int k = 0; 
+    sort(arr, arr + n); // Sort array
+
+    int st = 0, en = n - 1; // Two pointers
+    while(st <= en) {
+        if(arr[st] + arr[en] == sum) {
+            pairsArr[k] = arr[st];
+            pairsArr[k + 1] = arr[en];
+            st++, en--, k += 2;
+        }
+        else if(arr[st] + arr[en] > sum) 
+            en--;
+        else 
+            st++;
+    }
+}
+
 // Brute Force Approach
 // Time Complexity: O(n^2)
 void pairSum(int *arr, int n, int sum, int *pairsArr) {
@@ -34,7 +54,7 @@ int main() {
     for(int i = 0; i < 10; i++) 
         pairsArr[i] = INT_MIN;
     
-    pairSum(arr, n, reqSum, pairsArr);
+    pairSum2(arr, n, reqSum, pairsArr);
     if(pairsArr[0] == INT_MIN)
         cout << "No pair found :(" << endl;
     else {

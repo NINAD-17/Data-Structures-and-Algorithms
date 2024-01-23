@@ -3,7 +3,13 @@
 #include <unordered_map>
 using namespace std;
 
+// Explaination of 
+// 1. Why we used unordered map
+// 2. findDuplicates2() --> XOR operation
+// is available in readme.md
+
 // Using Unordered Map:
+// Time Complexity: O(n)
 int findDuplicate_unMap(int *arr, int size) {
     unordered_map<int, int> freq;
     for(int i = 0; i < size; i++) {
@@ -17,6 +23,7 @@ int findDuplicate_unMap(int *arr, int size) {
 // Optimized approach: Note: But these approach only applicable when there is only one number is duplicate.
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+// Remember that this algorithm only will work if there are [1, n - 1] elements are present. Ex [1, 5 - 1] then 1, 2, 3, 4 must be present.
 int findDuplicate2(int *arr, int n) {
     int ans = 0; 
     
@@ -52,7 +59,7 @@ int main() {
     int arr[10];
     int size;
 
-    cout << "Enter size of array (less than 100): ";
+    cout << "Enter size of array (less than 10): ";
     cin >> size;
 
     cout << "Enter " << size << " array elements: ";

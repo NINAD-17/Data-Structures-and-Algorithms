@@ -37,9 +37,11 @@ int main() {
 
     cout << "Intersection of two sorted arrays: ";
     while(i < 10) {
-        if(intersection[i] == INT_MIN) {
-            if(intersection[0] == INT_MIN) 
+        if(intersection[i] == INT_MIN) { // To know that all intersected elements are printed
+            if(intersection[0] == INT_MIN) { // If any array is empty
                 cout << "No intersection :(" << endl;
+                break;
+            }
             break;
         }
         cout << intersection[i] << " ";

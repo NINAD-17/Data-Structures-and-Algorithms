@@ -14,7 +14,7 @@ void tripletSum_twoPt(int *arr, int n, int reqSum, int *pairsArr) {
 
     sort(arr, arr + n);
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++) { // you can also stop this loop at condition i < n - 3 as loop needs triplets only.
         int left = i + 1;
         int right = n - 1;
         while(left < right) {

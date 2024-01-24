@@ -2,7 +2,6 @@
 using namespace std;
 
 // Time Complexity: O(n)
-
 void moveZeros_optimal(int *arr, int n) {
     int lastNonZeroIndex = 0;
     for(int i = 0; i < n; i++) {
@@ -17,7 +16,6 @@ void moveZeros_optimal(int *arr, int n) {
 
 
 // Time Complexity: O(n^2)
-
 void moveZeros(int *arr, int n) {
     int i = 0, j = 0;
 

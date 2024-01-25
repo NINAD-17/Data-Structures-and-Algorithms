@@ -70,7 +70,7 @@ int main() {
     //     cout << ans[i][0] << " --> " << ans[i][1] << endl;
     // }
 
-    // cout << "Using Unordered Array - \n";
+    // cout << "Using Unordered map - \n";
     // countFreq_uoMap(arr, size); 
 
     cout << "Using Binary Search - \n";

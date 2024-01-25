@@ -4,19 +4,41 @@
 #include <unordered_map>
 using namespace std;
 
-void findOccurrences_unMap(int *arr, int size) {
+// Unique Number of Occurrences
+// {1, 2, 2, 2, 3, 3}
+// Here, 1: 1
+//       2: 3
+//       3: 2 // all occurrences are unique
+
+
+// Optimal Approach
+// Time complexity: O(n)
+// Space complexity: O(n)
+bool findOccurrences_unMap(int *arr, int size) {
     unordered_map<int, int> freq;
     for(int i = 0; i < size; i++) {
         freq[arr[i]]++;
     }
 
+    // Output
     for(auto it : freq) {
         cout << it.first << " : " << it.second << endl;
     }
+
+    // Check unique occurence
+    unordered_map<int, int> occ;
+    for(auto it : freq) {
+        occ[it.second]++;
+        if(occ[it.second] > 1) 
+            return false;
+    }
+
+    return true;
 }
 
 // Optimized approach:
 // Time Complexity: This approach has a time complexity of O(n log n) due to the sorting step.
+// Space complexity: O(n)
 bool areUniqueWithOccurrences(int *arr, int size) {
     // Sort Array
     sort(arr, arr + size);
@@ -50,14 +72,14 @@ bool isUniqueArrayByOccaurrences(int *arr, int size) {
     int count = 0, k = 0, current = INT_MIN, tempSize = 0;
     int occurrencesArr[100] = {0}, uniqueNo[100] = {0};
     
-    sort(arr, arr + size);
+    sort(arr, arr + size); // Example: 1, 2, 2, 2, 3, 3
 
     for(int i = 0; i < size; i++) {
-        if(current == arr[i]) 
+        if(current == arr[i]) // Already counted that number's occurrences
             continue;
 
         for(int j = i; j < size; j++) {
-            if(arr[i] == arr[j])
+            if(arr[i] == arr[j]) // count occurrences
                 count++;
             else    
                 break;
@@ -99,7 +121,7 @@ int main() {
     cout << "Enter " << size << " array elements: ";
     takeInputFromUser(arr, size);
 
-    if(areUniqueWithOccurrences(arr, size)) 
+    if(findOccurrences_unMap(arr, size)) 
         cout << "Array element has unique number of occurances." << endl;
     else 
         cout << "Array elements hasn't unique number of occurances." << endl;

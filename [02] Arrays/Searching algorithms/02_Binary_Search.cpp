@@ -2,6 +2,7 @@
 #include <climits>
 using namespace std;
 
+// Time Complexity: O(log n)
 int binarySearch(int *arr, int n, int key) {
     int st = 0, en = n - 1;
 

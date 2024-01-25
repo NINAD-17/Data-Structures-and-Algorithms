@@ -33,11 +33,12 @@ int addNumbers(int *num1, int n, int *num2, int m, int *ans) {
         ans[k++] = sumDig;
     }
 
+    reverse(ans, ans + k);
     return k;
 }
 
 int addNumberArr(int *num1, int n, int *num2, int m, int *ans) {
-    int i = n - 1, j = m - 1, k = max(n, m), carry = 0;
+    int i = n - 1, j = m - 1, k = max(n, m) + 1, carry = 0;
 
     while(i >= 0 || j >= 0 || carry) {
         int sum = carry;
@@ -52,12 +53,12 @@ int addNumberArr(int *num1, int n, int *num2, int m, int *ans) {
         carry = sum / 10;
     }
 
-    return max(n, m) - k;
+    return k;
 } 
 
 void printNum(int *num, int n) {
     for(int i = 0; i < n; i++)
-        cout << num[i];
+        cout << num[i] << " ";
     cout << endl;
 }
 

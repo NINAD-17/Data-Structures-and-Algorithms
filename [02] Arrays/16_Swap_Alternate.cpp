@@ -2,7 +2,6 @@
 using namespace std;
 
 // Time Complexity: O(n);
-
 void swapAlternate(int *arr, int size) {
     int i = 0;
     while(i < size - 1) {

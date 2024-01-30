@@ -2,8 +2,11 @@
 #include <algorithm>
 using namespace std;
 
+/*
 // Mean = (sum of all elements) / (number of elements)
 // Median = The median of a sorted array of size N is defined as the middle element when N is odd and average of middle two elements when N is even.
+*/
+
 
 // Time Complexity is O(n log n) because we used sort in median function.
 

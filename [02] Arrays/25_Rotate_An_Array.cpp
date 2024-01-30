@@ -5,7 +5,7 @@ using namespace std;
 
 void rotateArr(int *arr, int n, int rotateBy, int *ans) {
     for(int i = 0; i < n; i++)
-        ans[(i + rotateBy) % n] = arr[i];
+        ans[(i + rotateBy) % n] = arr[i]; // Formula
 }
 
 void printArr(int *arr, int n) {

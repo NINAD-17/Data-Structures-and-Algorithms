@@ -3,7 +3,6 @@ using namespace std;
 
 // The time complexity of this function is O(n+m), where n is the size of the first array and m is the size of the second array.
 // The space complexity of this function is O(1), as it does not use any additional memory.
-
 void mergeTwoSortedArr_inNums1(int *nums1, int n, int *nums2, int m) {
     int i = n - 1, j = m - 1, k = (n + m) - 1;
 
@@ -20,7 +19,6 @@ void mergeTwoSortedArr_inNums1(int *nums1, int n, int *nums2, int m) {
 
 // The time complexity of the mergeTwoSortedArr_BruteForce function is O(n+m), where n is the size of the first array and m is the size of the second array. This is because the function iterates over both arrays once, comparing and merging their elements into the answer array.
 // The space complexity of the function is O(n+m), where n is the size of the first array and m is the size of the second array. This is because an additional array of size n+m is used to store the merged result.
-
 void mergeTwoSortedArr_BruteForce(int *nums1, int n, int *nums2, int m, int *ans) {
     int i = 0, j = 0, k = 0;
 

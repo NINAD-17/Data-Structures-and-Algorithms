@@ -70,3 +70,83 @@ There're 3 access modifiers:
 
 ### Getters and setters
 To access private data members outside of the class we use getters and setters. These are functions defined in the class by which we can access private data members.
+
+## Behind the scenes of Object Initialization
+- Default Constructor
+    - It first invokes a constructor.
+    - When `Hero ironman;` executes then it calls the `ironman.Hero()`. It's created by default. It's called **default constructor**.
+    - You can also able to write it explicitly.
+
+- Parameterized Constructor
+```
+        Hero(int health) {
+            health = health;
+        }
+```
+In this code, health (temp health/parameter variable) is giving it's value again to it (concept -> variable scoping - health is parameter variable and not actual variable defined in constructor)
+
+- **this keyword**: It stores the address of current object. It's a pointer that's why you can access it by (*this).__ or this -> __
+- by using `this -> health = health`, it solves that confusion and assigns the ironman's health value equals to health value get from parameter.
+
+- When you make any constructor explicitly then deafault constructor will not work, it's gone. So after creating parameterized constructor, you're trying to access default constructor it will not work.
+
+- **Copy constructor**: 
+- A copy constructor is a special constructor that creates a new object as a copy of an existing object.
+- Whenever you write a class then automatically it also makes a copy constructor.
+- So that you can able to use `Hero hulk(spiderman)`. It will copy all the object member's values into hulk.
+
+- Infinite loop in copy constructor: If you define your own copy constructor as
+```
+Hero(Hero temp) {
+
+}
+
+Hero hulk(spiderman);
+```
+
+In this case spiderman is passed by value to the temp. Therefore temp is making copy of spiderman object and to make copy it calls (temp calls) the copy constructor, and it gets stuck in infinite loop.
+
+- When you create Hero hulk(spiderman);, the following happens:
+spiderman is passed by value to the copy constructor (i.e., temp is a copy of spiderman).
+- Inside the copy constructor, the compiler attempts to create a copy of temp (which is itself a copy of spiderman).
+This process repeats indefinitely, leading to an infinite loop.
+- Fixing the Issue:
+To avoid the infinite loop, you should pass the object by reference (const reference, ideally) instead of by value:
+```
+Hero(const Hero& temp) {
+    // Implementation
+}
+```
+
+- By passing by reference, you avoid making unnecessary copies and prevent the infinite recursion.
+
+Passing by reference (const reference) allows you to work with the original object directly without creating additional copies.
+
+- Infinite loop stack for copy constructor:
+Initial Call:
+Hero hulk(spiderman):
+spiderman is passed by value to the copy constructor.
+Inside the copy constructor, a new object (let’s call it temp1) is created as a copy of spiderman.
+First Iteration:
+temp1(spiderman):
+Now, temp1 (which is a copy of spiderman) is passed to the copy constructor.
+Inside the copy constructor, another new object (let’s call it temp2) is created as a copy of temp1.
+Second Iteration:
+temp2(temp1):
+The process continues:
+temp2 (which is a copy of temp1) is passed to the copy constructor.
+Inside the copy constructor, yet another new object (let’s call it temp3) is created as a copy of temp2.
+Third Iteration:
+temp3(temp2):
+And again:
+temp3 (which is a copy of temp2) is passed to the copy constructor.
+Inside the copy constructor, a new object (let’s call it temp4) is created as a copy of temp3.
+... Infinite ....
+
+- After writing own copy constructor, default copy constructor gets dead.
+
+
+- Deep copy and Shallow copy:
+- Shallow copy: It's done by default. In this it uses same memory location for each object's object member.
+- Deep copy: In this instead of using same memory location it uses different. 
+- See the example in `5_Shallow_and_Deep_copy.cpp`.

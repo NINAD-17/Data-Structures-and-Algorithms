@@ -28,3 +28,45 @@ To create an array of size `5` in heap, use `int *arr = new int[5];`. The total 
 - To release memory use `delete` keyword.
 - Example: `delete num;`, `delete []arr`
 - Example: `Memory Allocation\Dynamic Memory Allocation\Example_using_while_loop.cpp`
+
+
+## More information about Static, Stack and Heap Memory
+1.  Static Memory (Data Segment):
+
+    -   Static memory (also known as the data segment) is used for global and static variables.
+    -   It includes:
+        -   Global variables (with static storage duration).
+        -   Static local variables (inside functions).
+        -   Constants (e.g., string literals).
+    -   The size of static memory is determined at compile time.
+    -   It is typically small compared to heap memory.
+    -   The exact size depends on the program's global and static variables.
+2.  Stack Memory:
+
+    -   Stack memory is used for function call frames (local variables, function parameters, return addresses).
+    -   Each function call creates a new stack frame.
+    -   The stack size is usually limited (e.g., a few megabytes).
+    -   The compiler doesn't calculate stack usage; it's the programmer's responsibility.
+    -   Stack memory is managed automatically during function calls and returns.
+3.  Heap Memory:
+
+    -   Heap memory (also known as dynamic memory) is used for dynamically allocated objects.
+    -   It includes memory allocated using `new` (in C++) or `malloc` (in C).
+    -   The heap size is not fixed; it grows as needed.
+    -   The operating system manages heap memory.
+    -   The lifetime of heap-allocated memory extends until explicitly freed (using `delete` or `free`) or until program termination.
+    -   Heap memory is accessible from the entire program.
+4.  Operating System and Physical Memory:
+
+    -   The operating system manages physical memory (RAM).
+    -   When a program runs, the OS allocates memory for its code, data, and stack.
+    -   The heap memory is allocated from the available physical memory.
+    -   The total available memory depends on the system's RAM.
+5.  Summary:
+
+    -   Static memory is fixed at compile time.
+    -   Stack memory is limited and managed automatically.
+    -   Heap memory is dynamic and can grow as needed.
+    -   The total memory available depends on the system's physical RAM.
+
+In summary, heap memory is not fixed; it can grow as needed from the available physical memory.

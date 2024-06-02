@@ -17,7 +17,6 @@ int main() {
     }
     // In above example, pointer ptr is allocated in stack memory and memory is allocate in heap. So at each iteration stack memory gets released as above example but heap's 
     // memory will not. In each iteration it will add 4 bytes (size of int). In C++, memory which allocate in heap not gets released. So, in this example after memory gets full of your system then program will crash.
-    
-     
 
+    // * Note: When the program ends (e.g., by manually terminating it), the operating system reclaims all memory, including these leaked heap allocations.
 }

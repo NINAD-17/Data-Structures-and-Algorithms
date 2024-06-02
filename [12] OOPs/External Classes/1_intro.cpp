@@ -1,6 +1,7 @@
 class Hero {
     // Properties 
-    char name[100];
-    int health;
-    int attack;
+    public:
+        char name[100];
+        int health;
+        char level;
 };

@@ -1,14 +1,14 @@
 #include <iostream>
-// #include "External Classes/1_intro.cpp"
+#include "../External Classes/1_intro.cpp"
 using namespace std;
 
 // Class defined in same file
-class Hero {
-    // Properties
-    public:
-        // int health;
-        char level;
-};
+// class Hero {
+//     // Properties
+//     public:
+//         // int health;
+//         char level;
+// };
 
 int main() {
 

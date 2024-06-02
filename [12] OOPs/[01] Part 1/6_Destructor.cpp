@@ -63,33 +63,20 @@ class Hero {
         void setName(char name[]) {
             strcpy(this -> name, name);
         }
+
+        ~Hero() {
+            cout << "My destructor called!" << endl;
+        }
 };
 
 int main() {
 
+    // Static
     Hero captain;
-    char name[20] = "Captain America";
-    captain.setName(name);
-    captain.setHealth(100);
-    captain.setLevel('A');
-    captain.print();
 
-    // 1. For Shallow Copy -
-    // comment the copy constructor written by you. So that code will use default copy constructor
-
-    // 2. For Deep Copy -
-    // Default copy constructor does the shallow copying
-    
-    Hero unknownHero(captain);
-    unknownHero.print();
-
-    strcpy(name, "Captain Cool");
-    captain.setName(name);
-    // As the name is a pointer, both hero objects are accessing same memory location for name.
-    // Therefore, after updating captain's name it also updated unknownhero's name.
-
-    captain.print();
-    unknownHero.print();
+    // Dynamic
+    Hero *spiderman = new Hero();
+    delete spiderman; // Manually destructor called.
 
     return 0;
 }

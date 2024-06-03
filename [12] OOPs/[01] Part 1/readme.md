@@ -75,8 +75,26 @@ To access private data members outside of the class we use getters and setters. 
 ### Constructors
 1. **Default Constructor**
     - It first invokes a constructor.
+    - Default constructor initializes the members of the class to their default values.
     - When `Hero ironman;` executes then it calls the `ironman.Hero()`. It's created by default. It's called **default constructor**.
     - You can also able to write it explicitly.
+    - Since you haven’t defined a constructor for the Hero class, the compiler generates a default constructor for you.
+    - The default constructor initializes each member variable to its default value:
+        - int health will be initialized to 0.
+        - char level will be initialized to the null character ('\0').
+    - So, after creating an instance of Hero (like Hero h;), the health will be 0, and the level will be '\0'.
+
+
+    ```
+    class Hero {
+        public:
+            int health;
+            char level;
+            Hero(int h) : health(h) {}
+    };
+    ```
+
+    in this case h.level will be uninitialized. (its value is indeterminate).
 
 2. **Parameterized Constructor**
     ```

@@ -105,8 +105,13 @@ void deleteNode(Node* &head, Node* &tail, int pos) {
 
     // delete node from 1st position
     if(pos == 1) {
-        head -> next -> prev = NULL;
-        head = head -> next;
+        if(head -> next == NULL) { // only one node present in LL
+            head = NULL;
+            tail = NULL;
+        } else { // more than one nodes in LL
+            head->next->prev = NULL;
+            head = head->next;
+        }
         currNode -> next = NULL;
         delete currNode;
         return;
@@ -153,6 +158,12 @@ void getLengthOfLL(Node* &head) {
 }
 
 void printLL(Node* &head, Node* &tail) {
+    if(head == NULL) {
+        cout << "linked list is empty or not exist :(" << endl;
+        cout << "head node: " << head << "\t|\ttail node: " << tail << endl << endl;
+        return;
+    }
+
     Node* temp = head; // It's good for readability. otherwise I also can able to directly use head by passing it by value.
     cout << "printing LL: ";
     while(temp != NULL) {
@@ -185,6 +196,9 @@ int main() {
 
     deleteNode(head, tail, 5);
     deleteNode(head, tail, 4);
+    deleteNode(head, tail, 3);
+    deleteNode(head, tail, 1);
+    deleteNode(head, tail, 1);
     printLL(head, tail);
 
     return 0;

@@ -114,7 +114,12 @@ void deleteNode(Node* &head, Node* &tail, int pos) {
 
     // 1st Node to delete
     if(pos == 1) {
-        head = head -> next;
+        if(head -> next == NULL) { // only one element is in linkedlist. after deletion head and tail must be NULL
+            head = NULL;
+            tail == NULL;
+        } else {
+            head = head -> next;
+        }
         temp -> next = NULL;
         delete temp;
         return ;
@@ -152,7 +157,12 @@ void deleteNodeWithData(Node* &head, Node* &tail, int data) {
 
     // if node found on 1st position (head)
     if(data == head -> data) {
-        head = head -> next;
+        if(head -> next == NULL) {
+            head = NULL;
+            tail = NULL;
+        } else {
+            head = head -> next;
+        }
         curr -> next = NULL;
         delete curr;
         return ;
@@ -180,6 +190,11 @@ void deleteNodeWithData(Node* &head, Node* &tail, int data) {
 }
 
 void getLengthOfLL(Node* &head) {
+    if(head == NULL) {
+        cout << "linked list is empty" << endl;
+        return;
+    }
+
     Node* temp = head;  
     int len = 0;
 
@@ -192,8 +207,13 @@ void getLengthOfLL(Node* &head) {
 }
 
 void printLL(Node* &head) { // We're passing it by reference to not create another node for head (for efficiency)
+    if(head == NULL) {
+        cout << "linked list is empty or not exist :(" << endl;
+        cout << "head node: " << head << endl << endl;
+        return;
+    }
+
     Node* temp = head;
-    
     cout << "Printing LinkedList: ";
     while(temp != NULL) { // If you write 'temp -> next != NULL' then it will stop before printing last node.
         cout << temp -> data << " -> ";
@@ -253,8 +273,11 @@ int main() {
     // deleteNodeWithData(head, tail, 10);
     printLL(head);
 
-    cout << "head: " << head -> data << endl;
-    cout << "tail: " << tail -> data << endl;
+    // deleteNodeWithData(head, tail, 10);
+    deleteNode(head, tail, 1);
+    printLL(head);
+    // cout << "head: " << head -> data << endl;
+    // cout << "tail: " << tail -> data << endl;
     getLengthOfLL(head);
 
     return 0;

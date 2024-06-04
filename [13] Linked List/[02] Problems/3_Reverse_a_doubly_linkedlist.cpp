@@ -1,0 +1,50 @@
+#include <iostream>
+#include "../lib/doubly_linkedlist.cpp"
+using namespace std;
+
+// 1. REVERSE A DOUBLY LINKED LIST USING ITERATIVE APPROACH
+// time complexity: O(n)
+// space complexity: O(1)
+
+void reverseDoublyLL(Node* &head, Node* &tail) {
+    // zero or one nodes
+    if(head == NULL || head -> next == NULL)
+        return ;
+    
+    tail = head; // update tail
+
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* forward = curr -> next;
+
+    while(curr != NULL) {
+        forward = curr -> next;
+        curr -> prev = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = forward;
+    }
+
+    head = prev;
+}
+
+// 2. REVERSE A DOUBLY LINKED LIST USING RECURSIVE APPROACH
+
+
+int main() {
+
+    Node* head = NULL;
+    Node* tail = NULL;
+
+    insertAtHead(head, tail, 10);
+    insertAtTail(head, tail, 20);
+    insertAtTail(head, tail, 30);
+    insertAtTail(head, tail, 40);
+    insertAtTail(head, tail, 50);
+    printLL(head, tail);
+
+    reverseDoublyLL(head, tail);
+    printLL(head, tail);
+
+    return 0;
+}

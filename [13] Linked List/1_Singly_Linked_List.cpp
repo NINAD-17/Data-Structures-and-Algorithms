@@ -16,10 +16,10 @@ class Node {
         ~Node() {
             int data = this -> data;
             // memory free
-            if(this -> next != NULL) {
-                delete next;
-                this -> next = NULL;
-            }
+            // if(this -> next != NULL) {
+            //     delete next;
+            //     this -> next = NULL;
+            // }
             cout << "memory freed for node with data " << data << endl;
         }
 };
@@ -158,6 +158,39 @@ void printLL(Node* &head) { // We're passing it by reference to not create anoth
     cout << "NULL" << endl;
 }
 
+void deleteNodeWithData(Node* &head, Node* &tail, int data) {
+    int cnt = 1;
+    Node* curr = head;
+
+    // if node found on 1st position (head)
+    if(data == head -> data) {
+        head = head -> next;
+        curr -> next = NULL;
+        delete curr;
+        return ;
+    }
+
+    // node found in middle
+    Node* prev = NULL;
+    curr = head;
+
+    while(curr -> data != data && curr -> next != NULL) {
+        prev = curr;
+        curr = curr -> next;
+    }
+
+    // data found
+    if(curr -> data == data) {
+        if(curr -> next == NULL) 
+            tail = prev; // update tail
+        prev -> next = curr -> next;
+        curr -> next = NULL;
+        delete curr;
+    } else {
+        cout << data << " not found in linked list :(" << endl;
+    }
+}
+
 int main() {
 
     /* ------- learn what if head and tail is null (creation of new linked list) [my implementation] ----- */
@@ -202,6 +235,10 @@ int main() {
 
     // deleteNode(head, tail, 5); // deleting at pos greater than actual length of LL
     deleteNode(head, tail, 4);
+    deleteNode(head, tail, 2);
+    deleteNodeWithData(head, tail, 20);
+    // deleteNodeWithData(head, tail, 60);
+    // deleteNodeWithData(head, tail, 10);
     printLL(head);
 
     cout << "head: " << head -> data << endl;

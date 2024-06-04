@@ -16,10 +16,10 @@ class Node {
         ~Node() {
             int data = this -> data;
             // memory free
-            // if(this -> next != NULL) {
-            //     delete next;
-            //     this -> next = NULL;
-            // }
+            if(this -> next != NULL) {
+                delete next;
+                this -> next = NULL;
+            }
             cout << "memory freed for node with data " << data << endl;
         }
 };
@@ -93,7 +93,7 @@ void insertInMiddle(Node* &head, Node* &tail, int data, int pos) {
     // note: in above while function <= is for input "pos = 0" and "tempNode != NULL" is for input "pos" which is greater that size of linked list.
 
     // if position is greater than current linked list size/length
-    if(tempNode == NULL || tempPos == 1) {
+    if(tempNode == NULL || pos <= 0) {
         cout << "---- please enter valid position  ---" << endl;
         return;
     }
@@ -146,18 +146,6 @@ void deleteNode(Node* &head, Node* &tail, int pos) {
     delete curr;
 }
 
-void printLL(Node* &head) { // We're passing it by reference to not create another node for head (for efficiency)
-    Node* temp = head;
-    
-    cout << "Printing LinkedList: ";
-    while(temp != NULL) { // If you write 'temp -> next != NULL' then it will stop before printing last node.
-        cout << temp -> data << " -> ";
-        temp = temp -> next;
-    }
-
-    cout << "NULL" << endl;
-}
-
 void deleteNodeWithData(Node* &head, Node* &tail, int data) {
     int cnt = 1;
     Node* curr = head;
@@ -189,6 +177,30 @@ void deleteNodeWithData(Node* &head, Node* &tail, int data) {
     } else {
         cout << data << " not found in linked list :(" << endl;
     }
+}
+
+void getLengthOfLL(Node* &head) {
+    Node* temp = head;  
+    int len = 0;
+
+    while(temp != NULL) {
+        len++;
+        temp = temp -> next;
+    }
+
+    cout << "Lenth of linked list is " << len << endl;
+}
+
+void printLL(Node* &head) { // We're passing it by reference to not create another node for head (for efficiency)
+    Node* temp = head;
+    
+    cout << "Printing LinkedList: ";
+    while(temp != NULL) { // If you write 'temp -> next != NULL' then it will stop before printing last node.
+        cout << temp -> data << " -> ";
+        temp = temp -> next;
+    }
+
+    cout << "NULL" << endl;
 }
 
 int main() {
@@ -230,7 +242,7 @@ int main() {
     insertInMiddle(head, tail, 40, 0); // 0th position case
     // insertInMiddle(head, tail, 40, 5); // pos greater than orinal length of LL case
 
-    insertInMiddle(head, tail, 60, 3);
+    insertInMiddle(head, tail, 60, 2);
     printLL(head);
 
     // deleteNode(head, tail, 5); // deleting at pos greater than actual length of LL
@@ -243,6 +255,7 @@ int main() {
 
     cout << "head: " << head -> data << endl;
     cout << "tail: " << tail -> data << endl;
+    getLengthOfLL(head);
 
     return 0;
 }

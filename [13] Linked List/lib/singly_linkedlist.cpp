@@ -189,10 +189,10 @@ void deleteNodeWithData(Node* &head, Node* &tail, int data) {
     }
 }
 
-void getLengthOfLL(Node* &head) {
+int getLengthOfLL(Node* &head) {
     if(head == NULL) {
         cout << "linked list is empty" << endl;
-        return;
+        return 0;
     }
 
     Node* temp = head;  
@@ -203,7 +203,7 @@ void getLengthOfLL(Node* &head) {
         temp = temp -> next;
     }
 
-    cout << "Lenth of linked list is " << len << endl;
+    return len;
 }
 
 void printLL(Node* &head) { // We're passing it by reference to not create another node for head (for efficiency)

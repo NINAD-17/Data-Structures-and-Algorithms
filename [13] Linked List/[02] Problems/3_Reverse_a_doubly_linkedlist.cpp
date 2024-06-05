@@ -29,6 +29,32 @@ void reverseDoublyLL(Node* &head, Node* &tail) {
 }
 
 // 2. REVERSE A DOUBLY LINKED LIST USING RECURSIVE APPROACH
+Node* reverseDLL(Node* head) {
+    // base case
+    if(head == NULL || head -> next == NULL) 
+        return head;
+    
+    Node* newHead = reverseDLL(head -> next);
+    head -> prev = head -> next;
+    head -> next -> next = head;
+    head -> next = NULL;
+
+    return newHead;
+}
+
+// 3. USING RECURSIVE APPROACH 2
+void reverseDLL_2(Node* &head, Node* prev, Node* curr) {
+    // base case
+    if(curr == NULL) {
+        head = prev;
+        return ;
+    }
+
+    Node* forward = curr -> next;
+    reverseDLL_2(head, curr, forward);
+    curr -> prev = curr -> next;
+    curr -> next = prev;
+}
 
 
 int main() {
@@ -44,6 +70,12 @@ int main() {
     printLL(head, tail);
 
     reverseDoublyLL(head, tail);
+    printLL(head, tail);
+
+    head = reverseDLL(head);
+    printLL(head, tail);
+
+    reverseDLL_2(head, NULL, head);
     printLL(head, tail);
 
     return 0;

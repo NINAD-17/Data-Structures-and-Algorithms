@@ -55,6 +55,12 @@ class Stack {
         }
 };
 
+// note: below logic will not work in stack<int>
+// below logic is written by considering stack is implemented with array
+// but in stack you can't traverse back means you can able to access element like array
+// you only know about top of stack element
+// so below logic can be modified by removing s.top() at each iteration
+// see example in '../[02] Problems/2_Reverse_a_string_using_stack.cpp'
 void printStack(Stack &st) { 
     // check if stack is empty or not
     if(st.isEmpty()) {

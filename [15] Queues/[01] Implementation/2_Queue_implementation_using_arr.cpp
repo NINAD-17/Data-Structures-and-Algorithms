@@ -19,8 +19,8 @@ class Queue {
         Queue(int size) {
             this -> size = size;
             arr = new int[size]; // allocate memory to the queue
-            qfront = 0;
-            qrear = 0;
+            qfront = 0; 
+            qrear = 0; // rear always points to last element's next position. therefore as the queue is currently empty instead of pointing -1, it points to 0
         }
 
         // behaviour
@@ -30,6 +30,8 @@ class Queue {
                 arr[qrear++] = data; // put data in qrear and then qrear++
             } else {
                 cout << "queue is full" << endl;
+                cout << endl; cout << endl;
+                cout << endl;
             }
         }
 

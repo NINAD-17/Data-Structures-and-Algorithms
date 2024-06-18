@@ -1,6 +1,7 @@
 .vscode/
 tempPractice.cpp
 unsolved.txt
+practice.cpp
 
 # Prerequisites
 *.d

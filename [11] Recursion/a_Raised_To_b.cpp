@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// optimized solution
+// note: see image from readme file to understand the solution
 int exponentiation_rec(int num1, int num2) {
     if(num2 == 0)
         return 1;
@@ -14,6 +16,16 @@ int exponentiation_rec(int num1, int num2) {
     } else 
         return ans * ans;
 }
+
+// Both methods below will take number of iterations equal to num2
+// Normal method using recursion recursion (similar to solution of iterative method)
+int exponentiation_rec_2(int num1, int num2) {
+    if(num2 == 0)
+        return 1;
+
+    return num1 * exponentiation_rec_2(num1, num2 - 1);
+}
+
 
 // Not a good solution, Use Fast Exponentiation method instead --> /Maths \For \DSA/fast_exponentiation.cpp
 int exponentiation(int num1, int num2) {
@@ -34,5 +46,7 @@ int main() {
     cin >> num2;
 
     cout << num1 << " raised to " << num2 << " is " << exponentiation_rec(num1, num2) << endl;
+    cout << num1 << " raised to " << num2 << " is " << exponentiation_rec_2(num1, num2) << endl;
+
     return 0;
 }

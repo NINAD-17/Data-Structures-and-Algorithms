@@ -71,6 +71,14 @@ However, if you were to modify your function in the future or use a similar patt
 
 - In general, unless you’re working in a performance-critical context, it’s often better to prioritize code readability and clarity. So, n % 2 == 0 might be preferred in most cases. But if you and your team are comfortable with bitwise operations and performance is a concern, n & 1 could be a good choice. It’s always important to consider the trade-offs in your specific context.
 
+### Problem: a raised to b
+![alt text](image.png)
+
+This apporach will take less iterations to solve.
+If we took example 1024 then with normal approach it will take 1024 iterations but with this optimized solution it will take very less iterations.
+In this case, it's taking only 11 iterations.
+![alt text](image-1.png)
+
 
 ## Sorting Algorithms
 Note: Merge Sort is faster than Selection, Insersion and Bubble sort.

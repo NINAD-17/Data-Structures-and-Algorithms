@@ -54,6 +54,8 @@ Therefore, **size of a class depends on the data members, their alignment requir
 As the theretical size is 5, it's not aligned with most largest object member's data type size. It's necessary to do that for optimization purposes. So it uses 3 out of 4 bytes (from alignment of int) and makes size equal to 8 bytes. 
 **It's not memory waste**.
 
+    <img src="padding_alignment.jpg" >
+
 ### External Class
 You can able to define class in external file. To do this make a cpp file and write the class in it. In original file where you want to add that class, simply include that file path in `"..."` this.
 

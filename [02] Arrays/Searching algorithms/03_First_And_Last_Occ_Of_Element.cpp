@@ -3,6 +3,7 @@
 using namespace std;
 
 // Time Complexity: O(log(n))
+// Space Complexity: O(1)
 int findFirstOcc(int *arr, int n, int key) {
     int st = 0, en = n - 1, index = INT_MIN;
 

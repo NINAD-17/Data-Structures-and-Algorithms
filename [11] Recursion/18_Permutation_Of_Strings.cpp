@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+// total possible permutations are n! where n is the size of arr => 3! = 6
+
 void solve(vector<int> arr, int size, vector<vector<int>> &ans, int index) {
     // Base Case
     if(index >= size) { 

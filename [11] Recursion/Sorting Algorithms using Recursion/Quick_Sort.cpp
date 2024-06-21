@@ -17,7 +17,7 @@ int partition(int *arr, int st, int en) {
     int pivotIndex = st + count;
     swap(arr[pivotIndex], arr[st]);
 
-    // Satisfy condition < and > than pivot in left and right parts
+    // Satisfy condition < and > than pivot in left and right parts ( ... < pivot < ...)
     int i = st, j = en;
 
     while(i < pivotIndex && j > pivotIndex) {

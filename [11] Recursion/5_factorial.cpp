@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Time complexity: O(n)
+
 int factorial_rec_generalOrder(int num, int ans) {
     if(num == 1)
         return ans;

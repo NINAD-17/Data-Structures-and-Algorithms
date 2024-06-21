@@ -95,3 +95,36 @@ Note: Merge Sort is faster than Selection, Insersion and Bubble sort.
         - Satisfy condition --> right part > pivot element and left part < pivot element.
 
     ii. Recursion
+
+3. Subset and Subsequences:
+    - Bit manipulation
+    <img src="subset-subsequence calc.jpg">
+
+4. Phone keypad problem example
+    <img src="phone_keypad_problem.jpg">
+
+5. Permutations of String
+    <img src="permutation_of_strings.png">
+
+6. Rat in maze
+    - Input is a 2D array.
+    - Each block contains 1 or 0.
+    - 1 means rat can go in block which contain 1. (1 = open path)
+    - 0 means rat can't go there. (0 = close path)
+    - Rat's initial block is 0,0. Src(0, 0)
+    - destination is dest(n-1, n-1)
+    - Rat can only move left, right, top, down.
+    - we've to provide all the solutions by which rat can reach the destination
+    ![alt text](rat_in_maze.png)
+
+    - movements
+        - up --> (x - 1, y)
+        - down --> (x + 1, y)
+        - left --> (x, y - 1)
+        - right --> (x, y + 1)
+
+    - conditions to check (safe to move)
+        - rat should be in the maze and not outside of 2D array
+        - position to which rat is going should be 1 (open path)
+        - position to which rat is going should be unvisited.
+        - when function call returns, visited position should mark with false (not-visited). Because we've to find all posible paths.

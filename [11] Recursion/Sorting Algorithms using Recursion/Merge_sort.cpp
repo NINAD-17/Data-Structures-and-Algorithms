@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+// MERGE SORT
+// known for its efficiency and stability.
+
 // Time Complexity: O(n log n)
 void merge_2_sorted_arrays(int *arr, int st, int en) {
     int mid = st + (en - st) / 2;
@@ -43,6 +46,10 @@ void merge_2_sorted_arrays(int *arr, int st, int en) {
     while(index2 < len2) {
         arr[mainArrayIndex++] = rightArr[index2++];
     }
+
+    // deallocate memory
+    delete[] leftArr;
+    delete[] rightArr;
 }
 
 void merge_sort(int *arr, int st, int en) {
@@ -59,7 +66,7 @@ void merge_sort(int *arr, int st, int en) {
     merge_sort(arr, mid + 1, en);
 
     // Merge two sorted arrays
-    merge_2_sorted_arrays(arr, st, en);
+    return merge_2_sorted_arrays(arr, st, en);
 }
 
 int main() {

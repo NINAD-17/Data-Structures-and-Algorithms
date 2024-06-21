@@ -63,7 +63,7 @@ void removeDuplicates_mp(Node* &head) {
 void removeDuplicates_sort(Node* &head) {
     if(head == NULL && head -> next == NULL) return;
 
-    
+    // write code here: use gfg's articla to study soriting of linked list
 }
 
 int main() {

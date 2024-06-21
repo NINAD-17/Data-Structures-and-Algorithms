@@ -73,7 +73,7 @@ void insertInMiddle(Node* &head, Node* &tail, int data, int pos) {
         return;
     } 
 
-    // pos other that 1 (middle position)
+    // pos other than 1 (middle position)
     Node* tempNode = head;
     int tempPos = 1;
 

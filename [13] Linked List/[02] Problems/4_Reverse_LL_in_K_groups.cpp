@@ -26,7 +26,7 @@ Node* reverseLL(Node* &head, int k) {
     }
 
     if(forward != NULL) 
-        head -> next = reverseLL(forward, k); // recursion call
+        head -> next = reverseLL(forward, k); // recursion call // Ex - reversed LL in 1st k group is 3, 2, 7, 8, 9, 10 ==> 8, 7, 2, 3. Head is 3. So 3 -> next = recursive call ==> 8,7,2,3,10,9
 
     // update head pointer
     return prev;

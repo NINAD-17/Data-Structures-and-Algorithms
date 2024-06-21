@@ -11,11 +11,12 @@ Node* getMiddleOfLL_2(Node* &head) {
     if(head == NULL || head -> next == NULL) return head;
 
     Node* slow = head;
-    Node* fast = head; // YT tut: you can use fast = head -> next
-    while(fast != NULL && fast -> next != NULL) { // YT tut: only one condition -> fast != NULL
-        // fast = fast -> next -> next; // you're not checking if the node is null or not
+    Node* fast = head -> next;
+
+    while(fast != NULL && fast -> next != NULL) {
         fast = fast -> next;
-        if(fast != NULL) fast = fast -> next;
+        if(fast != NULL) 
+            fast = fast -> next;
         slow = slow -> next;
     }
 

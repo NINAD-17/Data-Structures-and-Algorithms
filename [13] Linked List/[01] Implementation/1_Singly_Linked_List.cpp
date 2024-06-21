@@ -4,7 +4,7 @@ using namespace std;
 class Node {
     public:
         int data; // data in that node
-        Node* next; // pointer of node typel
+        Node* next; // pointer of node type
 
         // constructor
         Node(int data) {
@@ -116,7 +116,7 @@ void deleteNode(Node* &head, Node* &tail, int pos) {
     if(pos == 1) {
         if(head -> next == NULL) { // only one element is in linkedlist. after deletion head and tail must be NULL
             head = NULL;
-            tail == NULL;
+            tail = NULL;
         } else {
             head = head -> next;
         }

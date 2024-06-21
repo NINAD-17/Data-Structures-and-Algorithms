@@ -181,7 +181,7 @@ It's used to deallocate the memory.
 As soon as your objects are about to out of scope (lifetime is about to end) then destructor is called to free the memory.
 When you create a class, it automatically creates destructor.
 Like constructor, destructor don't have any return type. It doesn't contain any input parameters.
-Destructor is differentiated by using ~ sign.
+Destructor is differentiated by using `~` sign.
 For the static allocation destructor is automatically being called.
 But for dynamically we need to call destructor manually by using keyword `delete`.
 

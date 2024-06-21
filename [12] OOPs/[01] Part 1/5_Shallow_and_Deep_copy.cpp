@@ -88,13 +88,14 @@ int main() {
     // As the name is a pointer, both hero objects are accessing same memory location for name.
     // Therefore, after updating captain's name it also updated unknownhero's name.
 
+    cout << endl;
     captain.print();
     unknownHero.print();
 
 
     // ** Copy Assignment Operator **
     captain = unknownHero; // It's same as captain.health = unknownHero.health and so on...
-    captain.print();
+    captain.print(); // in this captain is now updated with unknownhero
 
 
     return 0;

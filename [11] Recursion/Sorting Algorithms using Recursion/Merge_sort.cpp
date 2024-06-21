@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+// (IMP) learn: Why Quick Sort preferred for Arrays and Merge Sort for Linked Lists?
+// link of artical: https://www.geeksforgeeks.org/why-quick-sort-preferred-for-arrays-and-merge-sort-for-linked-lists/
+
 // MERGE SORT
 // known for its efficiency and stability.
 

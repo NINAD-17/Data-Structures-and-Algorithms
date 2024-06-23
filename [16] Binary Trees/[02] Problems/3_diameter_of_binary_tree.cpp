@@ -10,7 +10,7 @@ using namespace std;
 //      3. find height of both tree (left and right)
 
 // time complexity: O(n^2) // as we're calling height() from diameter() both have O(n) complexity
-// space complexity:
+// space complexity: O(n)
 int height(Node* &root) {
     // base case
     if(root == NULL)
@@ -33,6 +33,28 @@ int diameter(Node* &root) {
 
     int ans = max(op1, max(op2, op3));
     return ans;
+}
+
+// with comments:
+int diameterWithComments(Node* root) {
+    if(root == NULL)
+        return 0;
+
+    cout << "\n------> Recursive call for " << root -> data << endl;
+    int leftCnt = diameterWithComments(root -> left);
+    cout << "leftCnt: " << leftCnt << "\tfor node: " << root -> data << endl;
+
+    int rightCnt = diameterWithComments(root -> right);
+    cout << "rightCnt: " << rightCnt << "\tfor node: " << root -> data << endl;
+
+    int leftHeight = height(root -> left);
+    int rightHeight = height(root -> right);
+    cout << "leftHeight: " << leftHeight << "\t" << "rightHeight: " << rightHeight << endl;
+    int height = leftHeight + rightHeight + 1;
+    cout << "height: " << height << "\tfor node: " << root -> data << endl;
+
+    cout << "returning value: " << max(leftCnt, max(rightCnt, height)) << endl << endl;
+    return max(leftCnt, max(rightCnt, height));
 }
 
 // --- optimized solution ---

@@ -72,6 +72,39 @@ void findPreSucc(Node* root, Node* &predecessor, Node* &successor, int key) {
     }
 }
 
+pair<int, int> predSucc(Node* root, int key) {
+    Node* temp = root;
+    int pred = -1;
+    int succ = -1;
+
+    while(temp -> data != key) {
+        if(temp -> data > key) {
+            succ = temp -> data;
+            temp = temp -> left;
+        } else {
+            pred = temp -> data;
+            temp = temp -> right;
+        }
+    }
+
+    // find pred and succ
+    // find max in left sub-tree to find predecessor
+    Node* leftTree = temp -> left;
+    while(leftTree != NULL) {
+        pred = leftTree -> data;
+        leftTree = leftTree -> right;
+    }
+
+    // find min in right sub-tree to find successor
+    Node* rightTree = temp -> right;
+    while(rightTree != NULL) {
+        succ = rightTree -> data;
+        rightTree = rightTree -> left;
+    }
+
+    return make_pair(pred, succ);
+}
+
 int main() {
 
     Node* root = NULL;

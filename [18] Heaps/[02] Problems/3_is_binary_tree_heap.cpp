@@ -7,6 +7,8 @@ using namespace std;
 //      - is it's a complete binary tree
 //      - is it satisfy properties of max heap
 
+// time complexity: O(n)
+
 int countNodes(Node* root) {
     // base case
     if(root == NULL) 

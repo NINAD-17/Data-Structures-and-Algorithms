@@ -30,13 +30,14 @@ vector<int> nextSmallerElement(vector<int> &arr, int n) {
     return ans;
 }
 
+// PREVIOUS SMALLER ELEMENT 
 vector<int> prevSmallerElement(vector<int> &arr, int n) {
     stack<int> st;
     st.push(-1); // 1st element of stack is -1
 
     vector<int> ans(n); // vector to store ans // vector is of size n
 
-    // traverse vector from last element to first element
+    // traverse vector from first element to last element
     for(int i = 0; i < n; i++) {
         int curr = arr[i];
         

@@ -1,7 +1,7 @@
-const nameOfFile = "Count Ways To Reach The N-th Stairs";
+const nameOfFile = "Merge Sort in Linked List";
 
 const filteredNameOfFile = nameOfFile.replace(/[-+(),."';:]/g, '');
 const separateWords = filteredNameOfFile.split(" ");
-const joinWords = separateWords.join("_");
+const joinWords = separateWords.join("_").toLowerCase();
 
 console.log(joinWords);

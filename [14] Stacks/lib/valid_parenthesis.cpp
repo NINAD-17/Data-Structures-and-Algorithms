@@ -1,11 +1,6 @@
 #include <iostream>
 #include <stack>
-#include "../lib/print.cpp"
 using namespace std;
-
-// VALID PARENTHESIS
-// time complexity: O(n)
-// space complexity: O(n)
 
 bool checkValidity(string &str) {
     // create stack to store opening parenthesis
@@ -49,17 +44,4 @@ bool checkValidity(string &str) {
         return true;
     else 
         return false;
-}
-
-int main() {
-    
-    // string str = "{aa}77{;;(})"; // invalid
-    string str = "{aa}77{;;()}"; // valid
-
-    if(checkValidity(str))
-        cout << "given string contains valid parenthesis" << endl;
-    else 
-        cout << "given string doesn't contains valid parenthesis" << endl;
-    
-    return 0;
 }
